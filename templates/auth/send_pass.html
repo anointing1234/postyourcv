@@ -1,0 +1,139 @@
+{% extends "../core/base/base.html" %}
+{% load static %}
+
+{% block contents %}
+    
+    
+    
+    <!-- Breadcromb Area Start -->
+    <section class="kick-breadcromb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-box">
+                        <h2>Send reset code </h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> home</a></li>
+                            <li>/</li>
+                            <li>send reset code</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcromb Area End -->
+    
+
+    <!-- Login Area Start -->
+<section class="kick-login-page-area section_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="login-page-box">
+                    <div class="login-page-heading text-center">
+                        <i class="fa fa-key"></i>
+                        <h3>Send reset code</h3>
+                      
+                    </div>
+                    <form id="send_reset_form">
+                          {% csrf_token %}
+                        <div class="account-form-group">
+                            <input type="text" placeholder="Email" name="email" id="field-widget-1">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <p>
+                            <button type="submit" id="field-widget-6">Send message</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Login Area End -->
+
+    
+   <!-- Toastify CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!-- Toastify JS -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	const loginForm = document.getElementById("send_reset_form");
+	const submitButton = document.getElementById("field-widget-6");
+
+	loginForm.addEventListener("submit", function (event) {
+		event.preventDefault();
+
+		const emailInput = document.getElementById("field-widget-1");
+		const email = emailInput.value.trim();
+		
+
+		if (!email) {
+			showToast("Please fill in all fields!", "red");
+			return;
+		}
+
+		// Show loading spinner
+		submitButton.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Logging in...`;
+		submitButton.disabled = true;
+
+		// Submit using form-encoded data
+		fetch("{% url 'send_reset_code' %}", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"X-CSRFToken": getCSRFToken(),
+			},
+			body: new URLSearchParams({
+				email: email,
+			}),
+		})
+		.then((response) => response.json())
+		.then((data) => {
+			if (data.success) {
+				showToast(data.message || "message sent check inbox !", "green");
+				setTimeout(() => {
+					window.location.href = "{% url 'reset_password' %}";
+				}, 2000);
+			} else {
+				showToast(data.message || "Invalid credentials!", "red");
+				resetButton();
+			}
+		})
+		.catch((error) => {
+			console.error("message send Error:", error);
+			showToast("Something went wrong. Please try again.", "red");
+			resetButton();
+		});
+	});
+
+	function resetButton() {
+		submitButton.innerHTML = "send";
+		submitButton.disabled = false;
+	}
+
+	function showToast(message, color) {
+		Toastify({
+			text: message,
+			backgroundColor: color,
+			duration: 3000,
+			gravity: "top",
+			position: "center",
+		}).showToast();
+	}
+
+	function getCSRFToken() {
+		const csrfInput = document.querySelector("[name=csrfmiddlewaretoken]");
+		return csrfInput ? csrfInput.value : "";
+	}
+});
+
+</script>
+
+    
+    	{% endblock contents %} 

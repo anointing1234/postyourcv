@@ -1,0 +1,787 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+
+    .kick-footer-bottom::before{
+        width: 25.33%
+    }
+    .kick-footer-bottom::after{
+        width: 25.33%
+    }
+    .single-footer-social li a{
+        width: 37px;
+        height: 37px;
+        line-height: 37px
+    }
+    .single-upcoming-match > h2{
+        font-size: 18px
+    }
+    #coming-soon > p{
+        width: 75px
+    }
+    .single-upcoming-match > h3{
+        font-size: 16px;
+        padding: 17px 15px
+    }
+    .upcoming-match-box > P{
+        font-size: 14px
+    }
+    .team-head-image{
+        width: 90px;
+        height: 100px
+    }
+    .upcoming-match-btn .kick-btn{
+        margin: 5px
+    }
+    .team-head-vs{
+        margin-top: 35px
+    }
+    .single-fixture-left-widght > ul {
+        float: none;
+        width: 100%;
+    }
+    .single-top-player.center{
+        left: 40px
+    }
+    .single-pro-overlay{
+        padding: 75px 0
+    }
+    .admin-image-right li{
+        margin: 0 5px
+    }
+    .kick-notfound h2{
+        font-size: 165px
+    }
+    .kick-notfound h4{
+        font-size: 20px
+    }
+
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+
+    
+    .kick-site-logo > img{
+        width: 100px
+    }
+    .mainmenu-left li a{
+        padding: 15px 5px;
+        font-size: 16px
+    }
+    .header-top-overlay{
+        width: 63%
+    }
+    .kick-main-slide{
+        height: 430px
+    }
+    .kick-about-left{
+        margin-top: 30px
+    }
+    .last-match-result-two{
+        text-align: left
+    }
+    .last-match-logo-right, .last-match-logo{
+        width: 145px;
+        right: -15px;
+        left: auto
+    }
+    .result-details-right{
+        margin-left: 0;
+        margin-right: 120px;
+    }
+    .kick-video-area::before{
+        background-image: none
+    }
+    .single-pro-overlay{
+        padding: 55px 0
+    }
+    .youtube-text{
+        display: none
+    }
+    .kick-video-overlay{
+        background: none
+    }
+    .single-footer-widget{
+        margin: 50px 0
+    }
+    .desktop {
+        display: block
+    }
+    .mobile{
+        display: none
+    }
+    .kick-footer-bottom::before{
+        border-width: 0
+    }
+    .kick-footer-bottom::after{
+        border-width: 0
+    }
+    .about-page-welcome-left {
+        margin-top: 30px
+    }
+    #product_tab_content{
+        margin-top: 30px
+    }
+    .fixture-page-next-match-right{
+        margin-top: 30px
+    }
+    .comment-form-template form input[type="text"], .comment-form-template form input[type="email"]{
+        width: 100%
+    }
+    .comment-form-template form textarea{
+        width: 100%
+    }
+    .margin-top{
+        margin-top: 50px
+    }
+    .single-top-player.center{
+        left: 0
+    }
+    .match-date, .match-tickets-box{
+        float: none;
+        width: 100%
+    }
+    .match-tickets-box-left{
+        min-width: 100%;
+        margin: 20px 0
+    }
+    .single-tickets-list{
+        margin-top: 30px
+    }
+    .match-tickets-box-right{
+        float: none
+    }
+    .order-tickets td .kick-btn{
+        padding: 10px;
+        font-size: 14px
+    }
+    .order-tickets table tbody tr > td{
+        padding: 20px 10px
+    }
+    .single-product-page-left div.pro-view{
+        float: left;
+        width: 25%
+    }
+    #viewproduct{
+        margin-bottom: 30px
+    }
+    .single-product-page-right {
+        margin-top: 30px
+    }
+    .coupon-cart-right > a, .proceed-checkout > a{
+        margin-right: 0
+    }
+    .single-shipping input{
+        margin: 5px 0
+    }
+    .margin-bottom{
+        margin-bottom: 50px
+    }
+    .login-page-box{
+        width: 70%
+    }
+    .mainmenu-left.second-menu ul li:nth-last-child(-n+3) ul{
+        left: auto;
+        right: 0
+    }
+    
+    
+    
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+
+    .site-logo img {
+        position: relative;
+        width: 80px;
+        z-index: 9999999;
+    }
+    .kick-desktop-menu{
+        display: block;
+        min-height: 110px;
+    }
+    .responsive-menu-2 {
+        display: block
+    }
+    .responsive-menu-1 {
+        display: block
+    }
+    .mainmenu-left{
+        display: none
+    }
+    .kick-site-logo > img{
+        width: 115px;
+        left: 36%
+    }
+    .header-top-right{
+        text-align: center
+    }
+    .header-top-left{
+        text-align: center
+    }
+    .header-top-right > a{
+        margin-right: 8px;
+        padding-right: 5px
+    }
+    .header-top-overlay{
+        width: 100%
+    }
+    .kick-main-slide{
+        height: 380px
+    }
+    .kick-main-caption h2{
+        font-size: 26px;
+        line-height: 35px;
+        letter-spacing: 1px
+    }
+    .kick-main-caption p{
+        margin: 10px 0 30px
+    }
+    .single-about-right-con{
+        font-size: 30px
+    }
+    .single-about-right-text{
+        margin-left: 45px
+    }
+    .single-about-right-text > h3{
+        font-size: 20px
+    }
+    .kick-section-heading > h2{
+        font-size: 21px
+    }
+    .header-top-left button:hover{
+        color: #212121
+    }
+    .kick-about-left{
+        margin-top: 50px
+    }
+    .last-match-result-two{
+        text-align: left
+    }
+    .last-match-logo-right, .last-match-logo{
+        width: 105px;
+        right: -15px;
+        left: auto
+    }
+    .result-details-right{
+        margin-left: 0;
+        margin-right: 120px
+    }
+    .team-head-vs{
+        margin: 30px 0
+    }
+    .kick-video-area::before{
+        background: none
+    }
+    .youtube-text{
+        display: none
+    }
+    .kick-video-overlay{
+        display: none
+    }
+    .admin-image-right > ul{
+        text-align: center
+    }
+    .admin-image{
+        text-align: center
+    }
+    .admin-image > img{
+        float: none
+    }
+    .single-footer-widget{
+        margin: 30px 0
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile{
+        display: block
+    }
+    .kick-footer-bottom::before{
+        border-width: 0
+    }
+    .kick-footer-bottom::after{
+        border-width: 0
+    }
+    .breadcromb-box h2{
+        font-size: 25px
+    }
+    .breadcromb-box > ul{
+        margin-top: 5px
+    }
+    .about-page-welcome-right > ul{
+        float: none;
+        width: 100%
+    }
+    .about-page-welcome-left {
+        margin-top: 30px;
+    }
+    #product_tab_content{
+        margin-top: 40px
+    }
+    #coming-soon{
+        padding: 10px 15px;
+        text-align: center;
+        display: none
+    }
+    #coming-soon::before{
+        border-width: 0
+    }
+    #coming-soon > p{
+        width: 85px;
+        margin: 5px
+    }
+    .single-upcoming-match > h2{
+        display: none
+    }
+    .fixture-page-next-match-right{
+        margin-top: 30px
+    }
+    .single-fixture-left-widght > ul{
+        width: 100%;
+        float: none
+    }
+    .box-share-left{
+        text-align: center
+    }
+    .box-share-right{
+        text-align: center;
+        margin-top: 10px
+    }
+    .single-comment-box.reply-comment{
+        margin-left: 50px
+    }
+    .comment-form-template form input[type="text"], .comment-form-template form input[type="email"]{
+        width: 100%
+    }
+    .comment-form-template form textarea{
+        width: 100%
+    }
+    .margin-top{
+        margin-top: 50px
+    }
+    .single-top-player.center{
+        left: 0
+    }
+    .player-details-right{
+        margin-top: 30px
+    }
+    .project-btn-const a{
+        display: block;
+        margin-bottom: 5px
+    }
+    .element-item{
+        width: 100%
+    }
+    .match-date, .match-tickets-box{
+        float: none;
+        width: 100%
+    }
+    .tickets-box-left-team{
+        float: none;
+        width: 100%
+    }
+    .tickets-box-left-vs{
+        width: 100%
+    }
+    .right-box .tickets-box-team-text{
+        float: left
+    }
+    .right-box .tickets-box-team-img{
+        margin-left: 0;
+        float: left
+    }
+    .match-tickets-box-left > p{
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0
+    }
+    .match-tickets-box-left > p{
+        float: none
+    }
+    .single-tickets-list{
+        margin-top: 30px
+    }
+    .match-tickets-box-right{
+        float: none
+    }
+    .order-tickets{
+        overflow-x: scroll
+    }
+    .order-tickets td .kick-btn{
+        padding: 10px 5px;
+        font-size: 16px
+    }
+    .order-tickets table tbody tr > td{
+        padding: 10px
+    }
+    .single-product-page-left div.pro-view{
+        float: left;
+        width: 25%
+    }
+    #viewproduct{
+        margin-bottom: 20px
+    }
+    .single-product-page-right {
+        margin-top: 20px;
+    }
+    .product-single-page-widget{
+        margin-top: 25px
+    }
+    .coupon-cart-left{
+        text-align: center
+    }
+    .coupon-cart-right{
+        text-align: center;
+    }
+    .proceed-checkout{
+        text-align: center;
+        margin-top: 10px
+    }
+    .coupon-cart-right > a, .proceed-checkout > a{
+        margin-right: 0;
+        margin-top: 20px
+    }
+    .single-shipping input{
+        margin: 10px 0
+    }
+    .single-shipping{
+        text-align: center
+    }
+    .margin-bottom{
+        margin-bottom: 50px
+    }
+    .kick-notfound h2{
+        font-size: 100px
+    }
+    .kick-notfound h4{
+        font-size: 18px
+    }
+    .login-page-box{
+        width: 100%
+    }
+    .map-canvas{
+        height: 350px
+    }
+    .result-details-left, .result-details-right{
+        font-size: 20px;
+        margin-right: 75px
+    }
+    .result-details-right{
+        margin-left: 0
+    }
+    .single-upcoming-match > h3{
+        padding: 18px 20px;
+        font-size: 16px
+    }
+    .upcoming-match-btn .kick-btn{
+        margin: 5px
+    }
+    .kick-score-scroll tbody tr td{
+        padding: 20px 5px
+    }
+    .single-pro-overlay{
+        padding: 72px 0
+    }
+    #pro_2 a{
+        font-size: 15px
+    }
+    .player-social > h3{
+        font-size: 17px;
+        margin-right: 5px
+    }
+    .player-social > a{
+        width: 27px;
+        height: 27px;
+        font-size: 17px
+    }
+    .tickets-box-team-text h4{
+        font-size: 20px
+    }
+    .coupon-cart-left input[type="submit"]{
+        margin-top: 5px
+    }
+    .coupon-cart-left input[type="text"]{
+        width: 100%
+    }
+    .kick-faqs-right > h3{
+        font-size: 20px
+    }
+    .kick-single-faqs > h3{
+        font-size: 16px
+    }
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+
+    .site-logo img {
+        position: relative;
+        width: 80px;
+        z-index: 9999999;
+    }
+    .kick-desktop-menu{
+        display: block;
+        min-height: 110px;
+    }
+    .responsive-menu-2 {
+        display: block
+    }
+    .responsive-menu-1 {
+        display: block
+    }
+    .mainmenu-left{
+        display: none
+    }
+    .kick-site-logo > img{
+        width: 115px;
+        left: 40%
+    }
+    .header-top-right{
+        text-align: center
+    }
+    .header-top-left{
+        text-align: center
+    }
+    .header-top-right > a{
+        margin-right: 8px;
+        padding-right: 5px
+    }
+    .header-top-overlay{
+        width: 100%
+    }
+    .kick-main-slide{
+        height: 380px
+    }
+    .kick-main-caption h2{
+        font-size: 26px;
+        line-height: 35px;
+        letter-spacing: 1px
+    }
+    .kick-main-caption p{
+        margin: 10px 0 30px
+    }
+    .single-about-right-con{
+        font-size: 30px
+    }
+    .single-about-right-text{
+        margin-left: 45px
+    }
+    .single-about-right-text > h3{
+        font-size: 20px
+    }
+    .kick-section-heading > h2{
+        font-size: 24px
+    }
+    .header-top-left button:hover{
+        color: #212121
+    }
+    .kick-about-left{
+        margin-top: 50px
+    }
+    .last-match-result-two{
+        text-align: left
+    }
+    .last-match-logo-right, .last-match-logo{
+        width: 125px;
+        right: -15px;
+        left: auto
+    }
+    .team-head-vs{
+        margin: 30px 0
+    }
+    .kick-video-area::before{
+        background: none
+    }
+    .youtube-text{
+        display: none
+    }
+    .kick-video-overlay{
+        display: none
+    }
+    .admin-image-right > ul{
+        text-align: center
+    }
+    .admin-image{
+        text-align: center
+    }
+    .admin-image > img{
+        float: none
+    }
+    .single-footer-widget{
+        margin: 30px 0
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile{
+        display: block
+    }
+    .kick-footer-bottom::before{
+        border-width: 0
+    }
+    .kick-footer-bottom::after{
+        border-width: 0
+    }
+    .breadcromb-box h2{
+        font-size: 25px
+    }
+    .breadcromb-box > ul{
+        margin-top: 5px
+    }
+    .about-page-welcome-right > ul{
+        float: none;
+        width: 100%
+    }
+    .about-page-welcome-left {
+        margin-top: 30px;
+    }
+    #product_tab_content{
+        margin-top: 40px
+    }
+    #coming-soon{
+        padding: 10px 15px;
+        text-align: center
+    }
+    #coming-soon::before{
+        border-width: 0
+    }
+    #coming-soon > p{
+        widows: 75px
+    }
+    .single-upcoming-match > h2{
+        display: none
+    }
+    .fixture-page-next-match-right{
+        margin-top: 30px
+    }
+    .single-fixture-left-widght > ul{
+        width: 100%;
+        float: none
+    }
+    .box-share-left{
+        text-align: center
+    }
+    .box-share-right{
+        text-align: center;
+        margin-top: 10px
+    }
+    .single-comment-box.reply-comment{
+        margin-left: 50px
+    }
+    .comment-form-template form input[type="text"], .comment-form-template form input[type="email"]{
+        width: 100%
+    }
+    .comment-form-template form textarea{
+        width: 100%
+    }
+    .margin-top{
+        margin-top: 50px
+    }
+    .single-top-player.center{
+        left: 0
+    }
+    .player-details-right{
+        margin-top: 30px
+    }
+    .project-btn-const a{
+        display: block;
+        margin-bottom: 5px
+    }
+    .element-item{
+        width: 100%
+    }
+    .match-date, .match-tickets-box{
+        float: none;
+        width: 100%
+    }
+    .tickets-box-left-team{
+        float: none;
+        width: 100%
+    }
+    .tickets-box-left-vs{
+        width: 100%
+    }
+    .right-box .tickets-box-team-text{
+        float: left
+    }
+    .right-box .tickets-box-team-img{
+        margin-left: 0;
+        float: left
+    }
+    .match-tickets-box-left > p{
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0
+    }
+    .match-tickets-box-left > p{
+        float: none
+    }
+    .single-tickets-list{
+        margin-top: 30px
+    }
+    .match-tickets-box-right{
+        float: none
+    }
+    .order-tickets{
+        overflow-x: scroll
+    }
+    .order-tickets td .kick-btn{
+        padding: 10px 5px;
+        font-size: 16px
+    }
+    .order-tickets table tbody tr > td{
+        padding: 10px
+    }
+    .single-product-page-left div.pro-view{
+        float: left;
+        width: 25%
+    }
+    #viewproduct{
+        margin-bottom: 20px
+    }
+    .single-product-page-right {
+        margin-top: 20px;
+    }
+    .product-single-page-widget{
+        margin-top: 25px
+    }
+    .coupon-cart-left{
+        text-align: center
+    }
+    .coupon-cart-right{
+        text-align: center;
+    }
+    .proceed-checkout{
+        text-align: center;
+        margin-top: 10px
+    }
+    .coupon-cart-right > a, .proceed-checkout > a{
+        margin-right: 0;
+        margin-top: 20px
+    }
+    .single-shipping input{
+        margin: 10px 0
+    }
+    .single-shipping{
+        text-align: center
+    }
+    .margin-bottom{
+        margin-bottom: 50px
+    }
+    .kick-notfound h2{
+        font-size: 132px
+    }
+    .kick-notfound h4{
+        font-size: 20px
+    }
+    .login-page-box{
+        width: 70%
+    }
+    .map-canvas{
+        height: 350px
+    }
+    .match-tickets-box-left{
+        min-width: auto
+    }
+    
+}

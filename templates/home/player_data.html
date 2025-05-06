@@ -1,0 +1,187 @@
+{% extends "../core/base/base.html" %}
+{% load static %}
+
+{% block contents %}
+
+<style>
+
+@media (min-width: 992px) {
+  .center-on-lg {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+</style>
+
+    
+    <!-- Breadcromb Area Start -->
+    <section class="kick-breadcromb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-box">
+                        <h2>Players Data</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> home</a></li>
+                            <li>/</li>
+                            <li>Players Data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcromb Area End -->
+    
+
+
+
+    <div style="margin-top:100px; margin-bottom:50px;"  class="container-fluid">
+        <div class="col-md-12 col-lg-12">
+          <div class="text-center  shadow-lg rounded bg-light">
+            <h3 style="margin-bottom:20px;" class="mb-3 fw-bolder">Football Players Seeking Sponsorship</h3>
+            <hr>
+            <h4>
+              Discover a list of talented football players currently seeking sponsorship opportunities.<br>
+              Click below to get in touch and access player contact information.
+            </h4>
+          </div>
+        </div>
+    </div>
+
+
+
+    <!-- Player Page Section Start -->
+    <section style="background-color:#EEEEEE;" class="kick-player-page">
+        <div class="kick-player-section section_t_100 section_b_100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="kick-section-heading">
+                            <h2>Available <span>Players</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row center-on-lg">
+                 {% for item in players_with_age %}
+                   {% with vp=item.player %}
+                    <div  class="col-md-3 col-sm-6">
+                        <div style="width:240px; border:none;"  class="single-top-player">
+                            <img style="height: 240px; width:240px;" src="{{ vp.account.get_profile_picture_url }}" alt="{{ vp.account.get_full_name }}" />
+                            <div class="player-info">
+                                <div class="player-name">
+                                    <h4><a href="#">{{ vp.account.first_name }} {{ vp.account.last_name }}</a></h4>
+                                    <p style="margin: 4px 0;">Position: {{ vp.account.get_position_display }}</p>
+                                    {% if item.age %}
+                                      <p style="margin: 4px 0;">Age: {{ item.age }}</p>
+                                    {% else %}
+                                      <p style="margin: 4px 0;">Age: Not Available</p>
+                                    {% endif %}
+                                    <p style="margin: 4px 0;">Country: {{ vp.account.nationality.name }}</p>
+                                    {% if vp.account.height %}
+                                      <p style="margin: 4px 0;">Height: {{ vp.account.height }} cm</p>
+                                    {% endif %}
+                                </div>
+                                  <a href="{% url 'contact' %}?player_name={{ vp.account.first_name }} {{ vp.account.last_name }}&player_country={{ vp.account.nationality.name }}" 
+                                    class="btn btn-primary" 
+                                    style="margin-top: 10px; width: 100%;">
+                                    Get Player Contact
+                                  </a>
+                            </div>
+                        </div>
+                    </div>
+                      {% endwith %}
+                      {% empty %}
+                        <div class="col-12 text-center">
+                          <p>No available football players at the moment.</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Player Page Section Start -->
+    
+
+
+ <div class="kick-player-section section_t_100 section_b_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="kick-section-heading">
+                    <h2>Meet Our <span>Team</span></h2>
+                    <p>Our dedicated team of football experts, scouts, and coaches working to connect football players with exciting opportunities.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Staff Member 1 -->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-top-player">
+                    <img style="height: 240px; width:100%;" src="{% static 'assets/img/head_coarch.jpeg' %}" alt="Team Member" class="team-image" />
+                    <div class="player-info">
+                        <div class="player-name">
+                            <h4><a href="#">Ican Ivanovich</a></h4>
+                            <p>Head Coach</p>
+                            <p>Specialization: Defense Strategy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staff Member 2 -->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-top-player">
+                    <img style="height: 240px; width:100%;" src="{% static 'assets/img/Assistant_Coach.jpeg' %}" alt="Team Member" class="team-image" />
+                    <div class="player-info">
+                        <div class="player-name">
+                            <h4><a href="#">Jaden Mendez</a></h4>
+                            <p>Assistant Coach</p>
+                            <p>Specialization: Midfield Training</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staff Member 3 -->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-top-player">
+                    <img style="height: 240px; width:100%;" src="{% static 'assets/img/Scouting_Director.jpeg' %}" alt="Team Member" class="team-image" />
+                    <div class="player-info">
+                        <div class="player-name">
+                            <h4><a href="#">Maria Lopez</a></h4>
+                            <p>Scouting Director</p>
+                            <p>Specialization: Talent Identification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Staff Member 4 -->
+            <div class="col-md-3 col-sm-6">
+                <div class="single-top-player">
+                    <img style="height: 240px; width:100%;" src="{% static 'assets/img/Goalkeeper_Coach.jpeg' %}" alt="Team Member" class="team-image" />
+                    <div class="player-info">
+                        <div class="player-name">
+                            <h4><a href="#">Liam O’Connor</a></h4>
+                            <p>Goalkeeper Coach</p>
+                            <p>Specialization: Goalkeeping Techniques</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock contents %} 

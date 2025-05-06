@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>PYFCV | Connect Footballers to Career Opportunities</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="PYFCV is the ultimate platform where footballers create professional profiles, apply for verified job listings, and connect with global clubs and recruiters.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="football career, football jobs, football recruitment, player profile, football clubs, PYFCV, football network, pro footballer, scout, football opportunity">
+
+    <!-- Meta Author -->
+    <meta name="author" content="PYFCV Team">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="PYFCV | Football Careers & Opportunities">
+    <meta property="og:description" content="Create your football profile, connect with clubs, and explore job opportunities. Join PYFCV now.">
+    <meta property="og:image" content="{% static 'assets/images/social-preview.jpg' %}">
+    <meta property="og:url" content="https://www.postyourfootballcv.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PYFCV | Football Careers & Opportunities">
+    <meta name="twitter:description" content="Create your football profile, connect with clubs, and explore job opportunities. Join PYFCV today.">
+    <meta name="twitter:image" content="{% static 'assets/images/social-preview.jpg' %}">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/favicons/manifest.json' %}">
+    <script src="https://kit.fontawesome.com/58f7fb8902.js" crossorigin="anonymous"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slicknav.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/perfect-scrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+
+        {% include "../sections/navbar.html" %}
+        {% block contents %}{% endblock contents %}
+        {% include "../sections/footer.html" %} 
+      
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    
+    <!-- Magnific Popup JS -->
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    
+    <!-- OwlCarousel JS -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    
+    <!-- SlickNav JS -->
+    <script src="{% static 'assets/js/jquery.slicknav.min.js' %}"></script>
+    
+    <!-- Scrollbar JS -->
+    <script src="{% static 'assets/js/jquery-perfect-scrollbar.min.js' %}"></script>
+    
+    <!-- Countdown JS -->
+    <script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+    
+    <!-- Waypoints JS -->
+    <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    
+    <!-- Progressbar JS -->
+    <script src="{% static 'assets/js/progressbar.min.js' %}"></script>
+    
+    <!-- Isotop JS -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    
+    <script src="{% static 'assets/js/custom-isotop.js' %}"></script>
+    
+    <!-- Custom JS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    
+
+
+</body>
+</html>

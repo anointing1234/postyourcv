@@ -1,0 +1,81 @@
+{% extends "../core/base/base.html" %}
+{% load static %}
+
+{% block contents %}
+
+    <!-- Breadcromb Area Start -->
+    <section class="kick-breadcromb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-box">
+                        <h2>Available Football Jobs</h2>
+                        <ul>
+                            <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> home</a></li>
+                            <li>/</li>
+                            <li>Available Football Jobs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcromb Area End -->
+
+    <!-- Jobs Area Start -->
+    <section class="kick-top-products-page-area section_100">
+        <div class="container">
+            {% if jobs|length == 1 %}
+                <div class="row text-center">
+            {% else %}
+                <div class="row">
+            {% endif %}
+
+                {% for job in jobs %}
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="single-top-product w-100 h-100" style="min-height: 400px; display: flex; flex-direction: column;">
+                            {% if job.country_flag %}
+                                <div class="product-image">
+                                    <a href="#">
+                                        <img src="{{ job.country_flag.url }}" alt="{{ job.country_name }} flag" style="height: 150px; width: 100%; object-fit: cover;" />
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                            <div class="product-text flex-grow-1 d-flex flex-column justify-content-between p-3" style="flex: 1 1 auto; overflow: auto;">
+                                <div>
+                                    <p style="margin-bottom:8px;">Country: {{ job.country_name|default:"___" }}</p>
+                                    <h5 class="mb-2">
+                                        <a href="#" class="text-dark">{{ job.position_title }}</a>
+                                    </h5>
+                                    {% if job.salary_offer %}
+                                        <h5 class="text-light mb-3">{{ job.salary_offer }}</h5>
+                                    {% endif %}
+                                    {% if job.requirement_description %}
+                                        <ul class="list-unstyled small mb-3" style="margin:0; padding:0;">
+                                            {% for req in job.requirement_description.splitlines %}
+                                                {% if req %}
+                                                    <li style="list-style:none;">
+                                                        <i class="fa fa-check text-success" style="margin-right:6px;"></i>{{ req }}
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+
+                                <a href="{% url 'apply_for_job' job.id %}" class="btn btn-danger mt-2">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="col-12 text-center">
+                        <p>No available football jobs at the moment.</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Jobs Area End -->
+
+{% endblock contents %}

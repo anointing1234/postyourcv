@@ -1,0 +1,100 @@
+{% load static %}
+    <!-- Header Area Start -->
+    <section class="kick-header-area">
+        <div class="header-top-area">
+            <div class="header-top-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="header-top-left">
+                        
+                         
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="header-top-right">
+                          {% if request.user.is_authenticated %}
+                                 <a>
+                                   Welcome {{ request.user.username }} ⚽
+                                  </a>
+                          
+                              <a href="{% url 'player_account' %}">
+                                <i class="fa fa-user"></i>
+                                My Account
+                            </a>
+                            {% else %}
+                              <a href="{% url 'auth_login' %}">
+                                <i class="fa fa-user"></i>
+                                My Account
+                            </a>
+                            {% endif %}
+
+                           {% if request.user.is_authenticated %}
+                                <a href="{% url 'auth_logout' %}">
+                                    <i class="fa fa-sign-in"></i>
+                                    logout
+                                </a>
+                            {% else %}
+                                <a href="{% url 'auth_login' %}">
+                                    <i class="fa fa-sign-in"></i>
+                                    login
+                                </a>
+                                <a href="{% url 'auth_signup' %}">
+                                    <i class="fa fa-user-plus"></i>
+                                    register
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mainmenu-area">
+            <div class="container">
+                <div class="kick-desktop-menu">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mainmenu-left pull-left">
+                                <nav>
+                                    <ul id="navigation_menu">
+                                        <li class="current-page-item">
+                                            <a href="{% url 'home' %}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'home' %}#about">about us</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'players_data' %}">Players Data</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="kick-site-logo">
+                                <div class="responsive-menu-2"></div>
+                                <a href="{% url 'home' %}" class="kick-site-logo">
+                                    <img src="{% static  'assets/img/logo.png' %}" alt="site logo" />
+                                </a>
+                                <div class="responsive-menu-1"></div>
+                            </div>
+                            <div class="mainmenu-left second-menu">
+                                <nav>
+                                    <ul id="navigation_menu_2">
+                                        <li>
+                                            <a href="{% url 'football_job' %}">Football Jobs</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'football_job' %}">Apply for Job</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'contact' %}">contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Header Area End -->
