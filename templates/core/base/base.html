@@ -33,9 +33,15 @@
     <meta name="twitter:image" content="{% static 'assets/images/social-preview.jpg' %}">
 
     <!-- Favicon -->
+      <!-- Apple Touch Icon (for iOS devices) -->
     <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/favicons/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/favicons/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/favicons/favicon-16x16.png' %}">
+    
+    <!-- Favicon 32x32 (for browsers) -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicons/favicon.ico' %}" sizes="32x32">
+    
+    <!-- Favicon 16x16 (for browsers) -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicons/favicon.ico' %}" sizes="16x16">
+
     <link rel="manifest" href="{% static 'assets/favicons/manifest.json' %}">
     <script src="https://kit.fontawesome.com/58f7fb8902.js" crossorigin="anonymous"></script>
     <!-- Stylesheets -->
