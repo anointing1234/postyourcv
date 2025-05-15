@@ -34,7 +34,7 @@ environ.Env.read_env(os.path.join(BASE_DIR,'file.env'))
 SECRET_KEY = 'django-insecure-$q8we!u&p7@8-=&fhepkpr!4nh163hj(&clx9lcl3nrd-cn9dw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ["*"]
 ALLOWED_HOSTS = ["postyourfootballcv.com"]
