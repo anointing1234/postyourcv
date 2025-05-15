@@ -284,7 +284,8 @@ def is_profile_complete(user):
     ]
     return all(required_fields)
 
-@login_required
+
+@login_required(login_url='home')
 def apply_for_job(request, job_id):
     job = get_object_or_404(FootballJob, id=job_id)
     user = request.user
