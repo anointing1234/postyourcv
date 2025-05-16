@@ -23,13 +23,12 @@ from phonenumber_field.modelfields import PhoneNumberField
 from multiselectfield import MultiSelectField
 
 
-
 class AccountManager(BaseUserManager):
     def create_user(self, email, username, password=None, **extra_fields):
-        if not username:
-            raise ValueError("The username is required")
         if not email:
             raise ValueError("The email address is required")
+        if not username:
+            raise ValueError("The username is required")
 
         email = self.normalize_email(email)
         user = self.model(email=email, username=username, **extra_fields)
@@ -38,10 +37,10 @@ class AccountManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, username, password=None, **extra_fields):
-        if not username:
-            raise ValueError("The username is required for superusers")
         if not email:
             raise ValueError("The email address is required for superusers")
+        if not username:
+            raise ValueError("The username is required for superusers")
         if not password:
             raise ValueError("The password is required for superusers")
 
@@ -51,9 +50,6 @@ class AccountManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
 
         return self.create_user(email=email, username=username, password=password, **extra_fields)
-
-
-
 
 
 # Football-specific choices
@@ -123,8 +119,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     # Manager & auth setup
     objects         = AccountManager()
-    USERNAME_FIELD  = 'username'
-    REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
+    USERNAME_FIELD  = 'email'
+    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
     def __str__(self):
         return self.username
