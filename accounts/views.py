@@ -185,13 +185,13 @@ def login_view(request):
         username = request.POST.get("username")
         password = request.POST.get("password")
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=username, password=password)
 
         if user is not None:
             login(request, user)
             return JsonResponse({"success": True, "message": "Login successful!"})
         else:
-            return JsonResponse({"success": False, "message": "Invalid username or password. Please try again."})
+            return JsonResponse({"success": False, "message": "Invalid email or password. Please try again."})
 
     return render(request, "forms/login.html")
 
