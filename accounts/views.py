@@ -179,16 +179,13 @@ def register(request):
     return render(request, 'forms/signup.html')
 
 
+
 def login_view(request):
     if request.method == "POST":
-        identifier = request.POST.get("username")  # this is the email field in your form
+        username = request.POST.get("username")
         password = request.POST.get("password")
 
-        try:
-            user_obj = User.objects.get(email=identifier)
-            user = authenticate(request, username=user_obj.username, password=password)
-        except User.DoesNotExist:
-            user = None
+        user = authenticate(request, email=username, password=password)
 
         if user is not None:
             login(request, user)
