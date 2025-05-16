@@ -45,6 +45,9 @@ CSRF_TRUSTED_ORIGINS = ["https://postyourfootballcv.com"]
 # Application definition
 AUTH_USER_MODEL = 'accounts.Account'
 
+AUTHENTICATION_BACKENDS = [
+    'accounts.authentication.EmailOrUsernameBackend',
+]
 
 
 # Application definition
