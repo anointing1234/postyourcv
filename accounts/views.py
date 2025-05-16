@@ -179,13 +179,16 @@ def register(request):
     return render(request, 'forms/signup.html')
 
 
-
 def login_view(request):
     if request.method == "POST":
-        username = request.POST.get("username")
+        identifier = request.POST.get("username")  # this is the email field in your form
         password = request.POST.get("password")
 
-        user = authenticate(request, email=username, password=password)
+        try:
+            user_obj = User.objects.get(email=identifier)
+            user = authenticate(request, username=user_obj.username, password=password)
+        except User.DoesNotExist:
+            user = None
 
         if user is not None:
             login(request, user)
@@ -194,8 +197,7 @@ def login_view(request):
             return JsonResponse({"success": False, "message": "Invalid email or password. Please try again."})
 
     return render(request, "forms/login.html")
-
-
+    
 
 def logout_view(request):
     auth_logout(request)
