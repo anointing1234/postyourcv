@@ -23,27 +23,25 @@ from phonenumber_field.modelfields import PhoneNumberField
 from multiselectfield import MultiSelectField
 
 
-
-
 class AccountManager(BaseUserManager):
-    def create_user(self, email, username, password=None, **extra_fields):
-        if not username:
-            raise ValueError("The username is required")
+    def create_user(self, email, username=None, password=None, **extra_fields):
         if not email:
             raise ValueError("The email address is required")
-
         email = self.normalize_email(email)
+        
+        # username optional here, if you want username mandatory, raise error if None
+        if username is None:
+            username = email.split('@')[0]  # auto generate username if you want
+        
         user = self.model(email=email, username=username, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, password=None, **extra_fields):
-        if not username:
-            raise ValueError("The username is required for superusers")
+    def create_superuser(self, email, username=None, password=None, **extra_fields):
         if not email:
             raise ValueError("The email address is required for superusers")
-        if not password:
+        if password is None:
             raise ValueError("The password is required for superusers")
 
         extra_fields.setdefault('is_active', True)
@@ -51,11 +49,10 @@ class AccountManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
 
+        if username is None:
+            username = email.split('@')[0]
+
         return self.create_user(email=email, username=username, password=password, **extra_fields)
-
-
-
-
 
 # Football-specific choices
 POSITION_CHOICES = [
@@ -72,63 +69,40 @@ FOOT_CHOICES = [
 ]
 
 class Account(AbstractBaseUser, PermissionsMixin):
-    # Login & identity
     username        = models.CharField(max_length=150, unique=True)
     email           = models.EmailField(max_length=254, unique=True)
     first_name      = models.CharField(max_length=30)
     last_name       = models.CharField(max_length=30)
 
-    # Contact & bio
     phone_number    = PhoneNumberField(max_length=20, blank=True, null=True)
     date_of_birth   = models.DateField(blank=True, null=True)
     nationality     = CountryField(max_length=50, blank=True, null=True)
     bio             = models.TextField(blank=True, null=True, help_text="A short personal bio")
-    birth_date      = models.CharField(max_length=100,blank=True,null=True, help_text="e.g january 5th, 1996")
-    birth_place     = models.CharField(max_length=100,blank=True,null=True ,help_text="e.g Manchester - UK")
+    birth_date      = models.CharField(max_length=100, blank=True, null=True, help_text="e.g january 5th, 1996")
+    birth_place     = models.CharField(max_length=100, blank=True, null=True, help_text="e.g Manchester - UK")
 
+    height          = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True, help_text="Height in cm")
+    weight          = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True, help_text="Weight in kg")
+    position        = models.CharField(max_length=2, choices=POSITION_CHOICES, blank=True, null=True)
+    preferred_foot  = models.CharField(max_length=5, choices=FOOT_CHOICES, blank=True, null=True)
+    profile_image   = models.ImageField(upload_to='profile_pics/', default='profile_pics/profile_pic.webp', blank=True)
 
-    # Football-specific
-    height          = models.DecimalField(
-                        max_digits=5, decimal_places=2,
-                        blank=True, null=True,
-                        help_text="Height in cm"
-                     )
-    weight          = models.DecimalField(
-                        max_digits=5, decimal_places=2,
-                        blank=True, null=True,
-                        help_text="Weight in kg"
-                     )
-    position        = models.CharField(
-                        max_length=2,
-                        choices=POSITION_CHOICES,
-                        blank=True, null=True
-                     )
-    preferred_foot  = models.CharField(
-                        max_length=5,
-                        choices=FOOT_CHOICES,
-                        blank=True, null=True
-                     )
-    profile_image  = models.ImageField(upload_to='profile_pics/',
-                        default='profile_pics/profile_pic.webp',
-                        blank=True)
-
-    # Meta
     date_joined     = models.DateTimeField(auto_now_add=True)
     last_login      = models.DateTimeField(auto_now=True)
 
-    # Permissions
     is_active       = models.BooleanField(default=True)
     is_staff        = models.BooleanField(default=False)
     is_admin        = models.BooleanField(default=False)
     is_superuser    = models.BooleanField(default=False)
 
-    # Manager & auth setup
     objects         = AccountManager()
-    USERNAME_FIELD  = 'username'
-    REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
+
+    # <-- Change USERNAME_FIELD to 'email' for email-based login -->
+    USERNAME_FIELD  = 'email'
+    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
     def __str__(self):
-        return self.username
+        return self.email  # or username, but email makes more sense now
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
@@ -138,6 +112,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
     def get_profile_picture_url(self):
         return self.profile_image.url if self.profile_image else settings.MEDIA_URL + 'profile_pics/profile_pic.webp' 
+
 
 
 
