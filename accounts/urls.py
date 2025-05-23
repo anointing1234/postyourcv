@@ -19,6 +19,7 @@ urlpatterns = [
     path('contact_form/',views.contact_player_view, name='contact_form'),
     path('send_reset_code/',views.send_reset_code_view, name='send_reset_code'),
     path('reset_password/',views.reset_password_view, name='reset_password'),
+    path('job_detail/<int:job_id>/',views.job_detail, name='job_detail'),
     re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

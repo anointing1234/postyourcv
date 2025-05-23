@@ -7,7 +7,8 @@ from datetime import datetime, timedelta
 from decimal import Decimal
 from io import BytesIO
 from PIL import Image
-
+import os
+import uuid
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, User
@@ -23,6 +24,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from multiselectfield import MultiSelectField
 
 
+# Account Manager
 class AccountManager(BaseUserManager):
     def create_user(self, email, username=None, password=None, **extra_fields):
         if not email:
@@ -179,18 +181,22 @@ FOOT_CHOICES = [
     ('Both', 'Both'),
 ]
 
+
+
+def get_upload_to(instance, filename):
+    # Generate a unique filename using UUID
+    unique_filename = f"{uuid.uuid4()}{os.path.splitext(filename)[1]}"
+    return os.path.join('country_flags/', unique_filename)
 class FootballJob(models.Model):
     country_name = models.CharField(max_length=100, blank=True, null=True)
-    country_flag = models.ImageField(upload_to='country_flags/', blank=True, null=True)
+    country_flag = models.ImageField(upload_to=get_upload_to, blank=True, null=True)
     position_title = models.CharField(max_length=100, blank=True, null=True)
     requirement_description = models.TextField(blank=True, null=True)
     salary_offer = models.CharField(max_length=100, blank=True, null=True)
     age_range = models.CharField(max_length=50, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
     def __str__(self):
         return f"{self.position_title} in {self.country_name}"
-
 
 
 

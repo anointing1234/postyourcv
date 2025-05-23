@@ -215,9 +215,6 @@ UNFOLD = {
         "light": lambda request: static("assets/img/logo.png"),
         "dark": lambda request: static("assets/img/logo.png"),
     },
-    "STYLES": [
-        lambda request: static("css/admin-logo.css"),
-    ],
     "DASHBOARD": {
         "show_search": True,
         "show_all_applications": False,

@@ -513,3 +513,17 @@ def reset_password_view(request):
 
     # GET (or other) → just show the form
     return render(request, "auth/reset_pass.html")
+
+
+
+
+
+
+
+def job_detail(request, job_id):
+    """
+    View to display details of a single football job identified by job_id.
+    """
+    job = get_object_or_404(FootballJob, id=job_id)
+    return render(request, 'home/Job_offer.html', {'job': job})
+

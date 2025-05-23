@@ -3,7 +3,81 @@
 
 {% block contents %}
 
-    <!-- Breadcromb Area Start -->
+<style>
+/* General container spacing */
+.kick-top-products-page-area {
+    padding: 40px 0;
+}
+
+/* Job card styling */
+.single-top-product {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    color: white;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+.single-top-product:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.product-image {
+    height: 150px;
+    overflow: hidden;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Text area */
+.product-text {
+    flex: 1 1 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.product-text h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+.product-text p {
+    font-size: 13px;
+    flex-grow: 1;
+    color: white;
+}
+
+/* Button styling */
+.product-text .btn {
+    margin-top: auto;
+    font-size: 13px;
+    padding: 8px 12px;
+}
+
+/* Bottom margin for all cards */
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+/* Responsive fix for spacing */
+@media (max-width: 767px) {
+    .mb-20 {
+        margin-bottom: 20px;
+    }
+}
+</style>
+
+    <!-- Breadcrumb Area Start -->
     <section class="kick-breadcromb-area">
         <div class="container">
             <div class="row">
@@ -20,56 +94,35 @@
             </div>
         </div>
     </section>
-    <!-- Breadcromb Area End -->
+    <!-- Breadcrumb Area End -->
 
     <!-- Jobs Area Start -->
     <section class="kick-top-products-page-area section_100">
         <div class="container">
-            {% if jobs|length == 1 %}
-                <div class="row text-center">
-            {% else %}
-                <div class="row">
-            {% endif %}
-
+            <!-- Center cards in large screen using flex -->
+            <div class="row justify-center-lg">
                 {% for job in jobs %}
-                    <div class="col-md-3 col-sm-6 mb-4">
-                        <div class="single-top-product w-100 h-100" style="min-height: 400px; display: flex; flex-direction: column;">
+                    <div class="col-md-5 col-sm-6 col-xs-12 mb-20">
+                        <div class="single-top-product">
                             {% if job.country_flag %}
                                 <div class="product-image">
-                                    <a href="#">
-                                        <img src="{{ job.country_flag.url }}" alt="{{ job.country_name }} flag" style="height: 150px; width: 100%; object-fit: cover;" />
+                                    <a href="{% url 'job_detail' job.id %}">  <!-- Link to job detail page -->
+                                        <img src="{{ job.country_flag.url }}" alt="{{ job.country_name }} flag">
                                     </a>
                                 </div>
                             {% endif %}
+                            <div class="product-text">
+                                <h5><a href="{% url 'job_detail' job.id %}" style="color: wheat;">{{ job.country_name }}</a></h5> <!-- Link to job detail page -->
+                                <p>
+                                    Are you ready for a new professional experience at the highest level in <strong>{{ job.country_name }}</strong>? We are looking for ambitious and talented players for a team in {{ job.country_name }}.
+                                </p>
+                                <a href="{% url 'job_detail' job.id %}" class="btn btn-danger btn-block">See Offer</a> <!-- Link to job detail page -->
 
-                            <div class="product-text flex-grow-1 d-flex flex-column justify-content-between p-3" style="flex: 1 1 auto; overflow: auto;">
-                                <div>
-                                    <p style="margin-bottom:8px;">Country: {{ job.country_name|default:"___" }}</p>
-                                    <h5 class="mb-2">
-                                        <a href="#" class="text-dark">{{ job.position_title }}</a>
-                                    </h5>
-                                    {% if job.salary_offer %}
-                                        <h5 class="text-light mb-3">{{ job.salary_offer }}</h5>
-                                    {% endif %}
-                                    {% if job.requirement_description %}
-                                        <ul class="list-unstyled small mb-3" style="margin:0; padding:0;">
-                                            {% for req in job.requirement_description.splitlines %}
-                                                {% if req %}
-                                                    <li style="list-style:none;">
-                                                        <i class="fa fa-check text-success" style="margin-right:6px;"></i>{{ req }}
-                                                    </li>
-                                                {% endif %}
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                </div>
-
-                                <a href="{% url 'apply_for_job' job.id %}" class="btn btn-danger mt-2">Apply Now</a>
                             </div>
                         </div>
                     </div>
                 {% empty %}
-                    <div class="col-12 text-center">
+                    <div class="col-xs-12 text-center">
                         <p>No available football jobs at the moment.</p>
                     </div>
                 {% endfor %}
@@ -79,3 +132,4 @@
     <!-- Jobs Area End -->
 
 {% endblock contents %}
+
