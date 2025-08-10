@@ -1,0 +1,458 @@
+{% extends "../core/base/base.html" %}
+{% load static %}
+{% block contents %}
+
+
+ <style>
+  @keyframes orbit {
+    from   { transform: rotate(0deg); }
+    to     { transform: rotate(360deg); }
+  }
+</style>
+  
+   
+    
+    
+    <!-- Breadcromb Area Start -->
+    <section class="kick-breadcromb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-box">
+                        <h2>Profile</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> home</a></li>
+                            <li>/</li>
+                            <li>My Profile</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcromb Area End -->
+    
+    <!-- Player Page Section Start -->
+<section class="kick-player-page section_100" style="padding: 30px 0;">
+  <div class="container">
+    <div class="row" style="align-items: flex-start;">
+
+      <!-- Left column: Profile + Orbit -->
+      <div class="col-xs-12 col-sm-4" style="margin-bottom: 20px;">
+        <div class="player-details-left" style="display:flex; justify-content:center;">
+          <div class="single-top-player details" style="
+               position: relative;
+               width: 100%;
+               max-width: 200px;
+               aspect-ratio: 1;
+               border:none;
+               ">
+            
+            <!-- Profile image fills the square -->
+            <img
+              src="{{ user.get_profile_picture_url }}"
+              alt="top player"
+              style="
+                position:absolute;
+                top:0; left:0;
+                width:100%; height:100%;
+                object-fit:cover;
+                border-radius:50%;
+                border:3px solid rgb(97,54,252);
+              "
+            />
+
+            <!-- Orbit wrapper rotates around its center -->
+            <div class="ball-wrapper" style="
+                  position:absolute;
+                  inset:0;          /* top/right/bottom/left:0 */
+                  transform-origin:center center;
+                  animation:orbit 5s linear infinite;
+                ">
+              <!-- Ball sits at top center of container -->
+              <div class="ball" style="
+                    position:absolute;
+                    top:0; left:50%;
+                    transform:translateX(-50%);
+                    font-size:24px;
+                    line-height:1;
+                  ">⚽</div>
+            </div>
+
+            <!-- Update pic button sits just below the square -->
+            <form id="profilePictureForm"
+                  method="POST"
+                  action="{% url 'update_profile_picture' %}"
+                  enctype="multipart/form-data"
+                  style="
+                    position:absolute;
+                    bottom:-50px;
+                    left:50%;
+                    transform:translateX(-50%);
+                  ">
+              {% csrf_token %}
+              <input type="file"
+                     id="id_profile_picture"
+                     name="profile_picture"
+                     accept="image/*"
+                     style="display:none"
+                     onchange="this.form.submit();" />
+                    <button type="button"
+                      class="btn btn-info py-2"  onclick="document.getElementById('id_profile_picture').click();">
+                    <i class="fa fa-camera"></i> Update pic
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Name + Bio -->
+      <div class="col-xs-12 col-sm-8" style="margin-bottom:20px; margin-top:40px;">
+        <div class="player-details-right">
+          <h2 style="margin-top:0;">{{ request.user.first_name }} {{ request.user.last_name }}</h2>
+          <div class="player-desc" style="margin-top:20px;">
+            {% if request.user.bio %}
+              <p style="
+                  margin-bottom:20px;
+                  padding:20px;
+                  border:1px solid rgb(97,54,252);
+                  border-radius:20px;
+                  background-color:#f0f0f0;
+                ">
+                {{ request.user.bio }}
+              </p>
+            {% else %}
+              <p style="
+                  margin-bottom:20px;
+                  padding:20px;
+                  border:1px solid rgb(97,54,252);
+                  border-radius:20px;
+                  background-color:#f0f0f0;
+                  font-style:italic;
+                  color:#666;
+                ">
+                No bio yet, click “Edit bio” to add one.
+              </p>
+            {% endif %}
+          </div>
+          <div class="player-social">
+            <button id="editBioBtn"
+                    class="btn btn-info"
+                    style="width:100%;">
+              <i class="fa-solid fa-pen-to-square"></i> Edit bio
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Player Page Section End -->
+    
+    <!-- Player Profile Info Start -->
+    <section class="kick-player-profile-info section_100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="kick-section-heading">
+                        <h2>Profile <Span>information</Span></h2>
+                        <div class="title-line-one"></div>
+                        <div class="title-line-two"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="player-profile-left">
+                        <table class="table table-striped table-responsive">
+                            <tbody>
+                                 <tr>
+                                <td>Fullname:</td>
+                                <td>{{ request.user.first_name }} {{ request.user.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Username:</td>
+                                <td>{{ request.user.username }}</td>
+                            </tr>
+                            <tr>
+                                <td>Phone number:</td>
+                                <td>{{ request.user.phone_number|default:'—' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>{{ request.user.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth:</td>
+                                <td>{{ request.user.date_of_birth|date:'F j, Y'|default:'—' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Date joined:</td>
+                                <td>{{ request.user.date_joined|date:'F j, Y' }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="player-profile-right">
+                        <table class="table table-striped table-responsive">
+                            <tbody>
+                                <tr>
+                                <td>Birth Place:</td>
+                                <td>{{ request.user.birth_place|default:'—' }}</td>
+                            </tr>
+                        <tr>
+                            <td>Nationality:</td>
+                            <td>{% if country_name %}{{ country_name }}{% else %}___{% endif %}</td>
+                        </tr>
+                            <tr>
+                                <td>Height:</td>
+                                <td>{{ request.user.height|default:'—' }} cm</td>
+                            </tr>
+                            <tr>
+                                <td>Weight:</td>
+                                <td>{{ request.user.weight|default:'—' }} kg</td>
+                            </tr>
+                            <tr>
+                                <td>Field position:</td>
+                                <td>{{ request.user.get_position_display|default:'—' }}</td>
+                            </tr>
+                            <tr>
+                                <td>Preferred foot:</td>
+                                <td>{{ request.user.get_preferred_foot_display|default:'—' }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              
+            </div>
+            <div style="display:flex; justify-content:center;" class="container-fluid">
+
+                    <select id="position-options-template" style="display:none;">
+                    <option value="">–</option>
+                    {% for code, label in POSITION_CHOICES %}
+                        <option value="{{ code }}">{{ label }}</option>
+                    {% endfor %}
+                    </select>
+
+                    <select id="foot-options-template" style="display:none;">
+                    <option value="">–</option>
+                    {% for code, label in FOOT_CHOICES %}
+                        <option value="{{ code }}">{{ label }}</option>
+                    {% endfor %}
+                    </select>
+                    
+              <button id="editProfileBtn" style="width:100%;" class="btn btn-info ">
+                <i class="fa-solid fa-pen-to-square"></i> Edit profile
+            </button></div>
+        </div>
+    </section>
+    <!-- Player Profile Info End -->
+   
+
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const isProfileIncomplete = {{ is_profile_incomplete|yesno:"true,false" }};
+  
+  if (isProfileIncomplete === true) {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Profile Incomplete',
+      text: 'Please complete your profile to improve visibility and unlock full features.',
+      confirmButtonText: 'Update Now',
+      confirmButtonColor: '#3085d6'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        document.getElementById('editProfileBtn')?.click();
+      }
+    });
+  }
+
+
+  const editBtn = document.getElementById('editBioBtn');
+  if (!editBtn) { console.error("Missing #editBioBtn"); return; }
+  editBtn.addEventListener('click', () => {
+    Swal.fire({
+      title: 'Edit your bio',
+      input: 'textarea',
+      inputLabel: 'Bio',
+      inputPlaceholder: 'Write something about yourself…',
+      inputValue: "{{ request.user.bio|default:''|escapejs }}",
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      cancelButtonText: 'Cancel',
+      preConfirm: (v) => v.trim() || Swal.showValidationMessage('Bio cannot be empty')
+    }).then((res) => {
+      if (!res.isConfirmed) return;
+
+      Swal.fire({
+        title: 'Saving...',
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+      });
+
+      fetch("{% url 'update_bio' %}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify({ bio: res.value })
+      })
+      .then(r => r.json())
+      .then(d => {
+        setTimeout(() => {
+          if (d.success) {
+            Swal.fire({ icon: 'success', title: 'Saved!', timer: 800, showConfirmButton: false })
+              .then(() => location.reload());
+          } else {
+            Swal.fire('Error', d.error || 'Could not save bio', 'error');
+          }
+        }, 1500);
+      })
+      .catch(() => Swal.fire('Error', 'Network error', 'error'));
+    });
+  });
+
+  const btn = document.getElementById('editProfileBtn');
+  if (!btn) return console.error('Missing #editProfileBtn');
+
+  btn.addEventListener('click', () => {
+    const positionOptions = document.getElementById('position-options-template').innerHTML;
+    const footOptions = document.getElementById('foot-options-template').innerHTML;
+
+    // Render Django country options inside JS template string
+    const countryOptions = `{% for code, name in countries %}
+      <option value="{{ code }}" {% if request.user.nationality == code %}selected{% endif %}>{{ name }}</option>
+    {% endfor %}`;
+
+    Swal.fire({
+      title: 'Edit Profile Information',
+      width: 600,
+      html: `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div>
+            <label>Phone number</label>
+            <input id="swal-phone" class="swal2-input" value="{{ request.user.phone_number|default_if_none:'' }}">
+          </div>
+          <div>
+            <label>Date of Birth</label>
+            <input id="swal-dob" type="date" class="swal2-input" value="{{ request.user.date_of_birth|date:'Y-m-d'|default_if_none:'' }}">
+          </div>
+          <div>
+            <label>Birth Place</label>
+            <input id="swal-birthplace" class="swal2-input" value="{{ request.user.birth_place|default_if_none:'' }}">
+          </div>
+          <div>
+            <label>Nationality</label>
+            <select id="swal-nationality" class="swal2-input">
+              <option value="">Select your nationality</option>
+              ${countryOptions}
+            </select>
+          </div>
+          <div>
+            <label>Height (cm)</label>
+            <input id="swal-height" type="number" class="swal2-input" value="{{ request.user.height|default_if_none:'' }}">
+          </div>
+          <div>
+            <label>Weight (kg)</label>
+            <input id="swal-weight" type="number" class="swal2-input" value="{{ request.user.weight|default_if_none:'' }}">
+          </div>
+          <div>
+            <label>Field Position</label>
+            <select id="swal-position" class="swal2-input">
+              ${positionOptions}
+            </select>
+          </div>
+          <div>
+            <label>Preferred Foot</label>
+            <select id="swal-foot" class="swal2-input">
+              ${footOptions}
+            </select>
+          </div>
+        </div>
+      `,
+      focusConfirm: false,
+      showCancelButton: true,
+      confirmButtonText: 'Save',
+      preConfirm: () => {
+        const phone = document.getElementById('swal-phone').value.trim();
+        const phoneRegex = /^\+\d{10,15}$/;
+        if (!phoneRegex.test(phone)) {
+          Swal.showValidationMessage('Phone number must start with "+" followed by country code and number (e.g. +12345678901)');
+          return false;
+        }
+        return {
+          phone_number: phone,
+          date_of_birth: document.getElementById('swal-dob').value,
+          birth_place: document.getElementById('swal-birthplace').value,
+          nationality: document.getElementById('swal-nationality').value,
+          height: document.getElementById('swal-height').value,
+          weight: document.getElementById('swal-weight').value,
+          position: document.getElementById('swal-position').value,
+          preferred_foot: document.getElementById('swal-foot').value
+        };
+      }
+    }).then((result) => {
+      if (!result.isConfirmed) return;
+
+      Swal.fire({
+        title: 'Updating...',
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading()
+      });
+
+      fetch("{% url 'update_profile_info' %}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: JSON.stringify(result.value)
+      })
+      .then(r => r.json())
+      .then(data => {
+        setTimeout(() => {
+          if (data.success) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Profile updated',
+              timer: 1000,
+              showConfirmButton: false
+            }).then(() => location.reload());
+          } else {
+            Swal.fire('Error', data.error || 'Could not save', 'error');
+          }
+        }, 1500);
+      })
+      .catch(() => Swal.fire('Error', 'Network error', 'error'));
+    });
+  });
+
+  function getCookie(name) {
+    let v = null;
+    document.cookie.split(';').forEach(c => {
+      let [k,val] = c.trim().split('=');
+      if (k===name) v = decodeURIComponent(val);
+    });
+    return v;
+  }
+});
+</script>
+
+    
+    	{% endblock contents %} 
+
+
+
+

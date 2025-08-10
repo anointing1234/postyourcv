@@ -1,0 +1,3000 @@
+
+/*
+*******************************************
+*******************************************
+
+Template Name: Kick || Football Club HTML Template
+Author: Hassan Rasu
+Version: 1.0
+Template By: Themescare
+
+* This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+
+This files contents are outlined below >>>>
+
+*** SEARCH EACH SECTION AS IT COMMENTS, YOU WILL GET THE RIGHT SECTION.
+
+*******************************************
+*******************************************
+
+==== CSS INDEX
+
+01 - IMPORTED CSS
+02 - DEFAULT CSS
+03 - PAGINATION CSS
+04 - BREADCROMB CSS
+05 - REPONSIVE MENU CSS
+06 - BTN TO TOP
+07 - HEADER CSS
+08 - MAIN SLIDER CSS
+09 - ABOUT AREA CSS
+10 - LAST MATCH RESULT CSS
+11 - UPCOMING MATCH CSS
+12 - VIDEO AREA CSS
+13 - TOP PLAYER CSS
+14 - GALLERY AREA CSS
+15 - TOP PRODUCT CSS
+16 - LATEST POST CSS
+17 - FOOTER CSS
+18 - ABOUT PAGE CSS
+19 - FIXTURE PAGE CSS
+20 - SINGLE FIXTURE PAGE CSS
+21 - PLAYER PAGE CSS
+22 - PLAYER DETAILS PAGE CSS
+23 - GALLERY PAGE CSS
+24 - TICKET PAGE CSS
+25 - SINGLE SHOP CSS
+26 - CART PAGE CSS
+27 - CHECKOUT PAGE CSS
+28 - BLOG PAGE CSS
+29 - SINGLE BLOG PAGE CSS
+30 - 404 PAGE CSS
+31 - FAQs PAGE CSS
+32 - LOGIN PAGE CSS
+33 - CONTACT PAGE CSS
+
+*/
+
+
+
+/*================================================
+01 - IMPORTED CSS
+==================================================*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700');
+
+/*================================================
+02 - DEFAULT CSS
+==================================================*/ 
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    color: #303030;
+    font-weight: 400
+}
+html,body { 
+    height: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto
+}
+.kick-btn {
+    background:rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 20px;
+    text-transform: capitalize;
+}
+.kick-btn > i {
+    border-left: 1px solid #fff;
+    margin-left: 10px;
+    padding-left: 10px;
+    width: 30px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.kick-btn:hover{
+    background: #fff none repeat scroll 0 0;
+    color: rgb(97, 54, 252)
+}
+.kick-btn:hover > i{
+    border-left: 1px solid rgb(97, 54, 252);
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+a{
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    color: inherit
+}
+a:focus {
+    text-decoration: none;
+    outline: medium none;
+    color: inherit
+}
+a:hover {
+    color: inherit;
+    text-decoration: none;
+    color: inherit
+}
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+.section_100 {
+    padding: 100px 0;
+}
+.section_50 {
+    padding: 50px 0;
+}
+.section_15{
+    padding: 15px 0
+}
+.pad-right{
+    padding-right: 0
+}
+.section_t_100{
+    padding-top: 100px
+}
+.section_b_100{
+    padding-bottom: 100px
+}
+.section_b_70{
+    padding-bottom: 70px
+}
+.kick-section-heading {
+    margin-bottom: 10px;
+}
+.kick-section-heading > h2 {
+    color: #444;
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    font-size: 27px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 10px
+}
+.kick-section-heading span {
+    color: rgb(97, 54, 252);
+}
+.title-line-one {
+    background: #000 none repeat scroll 0 0;
+    height: 3px;
+    width: 15%;
+}
+.title-line-two {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    height: 3px;
+    margin-top: 5px;
+    width: 22%;
+}
+
+/*================================================
+03 - PAGINATION CSS
+==================================================*/ 
+
+.pagination {
+    margin: 50px 0 0;
+}
+.pagination-box {
+    text-align: center;
+}
+.pagination a {
+    color: #555 !important;
+    border: 1px solid rgb(97, 54, 252)  !important
+}
+.pagination .active > a, .pagination a:hover {
+    background: rgb(97, 54, 252)  none repeat scroll 0 0 !important; 
+    color: #fff !important
+}
+
+
+/*================================================
+04 - BREADCROMB CSS
+==================================================*/ 
+.kick-breadcromb-area {
+    background: #eee none repeat scroll 0 0;
+    padding: 70px 0;
+    position: relative;
+    text-align: center
+}
+.breadcromb-box h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 29px;
+    font-weight: 700;
+    text-transform: capitalize
+}
+.breadcromb-box > ul {
+    margin-top: 10px;
+}
+.breadcromb-box ul li {
+    display: inline-block;
+    font-weight: 600;
+    margin: 0 4px;
+    text-transform: capitalize;
+}
+.breadcromb-box ul li a i {
+    color: rgb(97, 54, 252);
+    font-size: 20px;
+}
+.kick-breadcromb-area:before {
+    border-color: rgb(97, 54, 252) transparent;
+    border-style: solid;
+    border-width: 65px 60px 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 33.33%;
+}
+.kick-breadcromb-area:after {
+    border-color: rgb(97, 54, 252) transparent;
+    border-style: solid;
+    border-width: 0 0 65px 60px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33.33%;
+}
+
+/*================================================
+05 - REPONSIVE MENU CSS
+==================================================*/ 
+
+.responsive-menu-2 {
+    left: 0;
+    position: absolute;
+    width: 50%;
+    display: none
+}
+.responsive-menu-1 {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    display: none
+}
+.responsive-menu-2 .slicknav_btn {
+    float: left;
+    margin-left: 15px
+}
+.responsive-menu-1 .slicknav_btn {
+    margin-right: 15px
+}
+.slicknav_nav a{
+    font-size: 16px;
+    margin: 0;
+    text-transform: capitalize;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    color: #000
+}
+.slicknav_menu {
+    background: transparent;
+}
+.slicknav_menutxt {
+    display: none !important;
+}
+.slicknav_arrow {
+    float: right;
+    color: #000
+}
+.slicknav_nav a:hover{
+    border-radius: 0;
+}
+.slicknav_nav .slicknav_row:hover{
+    border-radius: 0
+}
+.slicknav_nav a:hover, .slicknav_nav .slicknav_row:hover {
+    background: rgb(97, 54, 252)  none repeat scroll 0 0;
+    color: #fff !important
+}
+.slicknav_nav li {
+    border-bottom: 1px solid #aaa;
+}
+.slicknav_nav li:last-child{
+    border-bottom: 0px solid #aaa
+}
+.slicknav_nav {
+    background: #fff none repeat scroll 0 0;
+    border-top: 1px solid rgb(97, 54, 252);
+    box-shadow: 0 10px 30px #aaa;
+    position: relative;
+    top: 5px;
+    z-index: 9999999
+}
+.slicknav_btn{
+    background-color: #000 !important;
+    line-height: 0;
+    margin: 28px 0
+}
+.slicknav_menu .slicknav_icon {
+    float: none !important;
+    margin: 0
+}
+.slicknav_icon-bar {
+    height: 3px !important;
+    margin: 5px 0;
+    width: 30px !important;
+}
+.slicknav_menu .slicknav_icon-bar {
+    background-color: #fff ;
+}
+
+/*================================================
+06 - BTN TO TOP
+==================================================*/ 
+
+.btntoTop:before {
+    color: #fff;
+    content: "";
+    display: inline-block;
+    font: 20px "FontAwesome";
+    vertical-align: middle;
+}
+.btntoTop {
+    background-color: rgb(97, 54, 252)   ;
+    border: 2px solid rgb(97, 54, 252)  ;
+    border-radius: 2px;
+    bottom: 30px;
+    cursor: pointer;
+    height: 44px;
+    line-height: 36px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    -webkit-transition: opacity 0.4s ease 0s;
+    transition: opacity 0.4s ease 0s;
+    width: 44px;
+    z-index: 99999;
+}
+.btntoTop.active {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.btntoTop.active:hover {
+    background: #ef3e45  none repeat scroll 0 0;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+.btntoTop.active.btntoTop:hover:before {
+    color: #fff;
+}
+
+/*================================================
+07 - HEADER CSS
+==================================================*/ 
+
+.header-top-area {
+    background: #212121 none repeat scroll 0 0;
+    padding: 15px 0;
+    position: relative
+}
+.header-top-overlay{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+}
+.header-top-left .dropdown {
+    display: inline-block;
+}
+.header-top-right {
+  text-align: right;
+}
+.header-top-left button {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-weight: 500;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.header-top-left button:hover{
+    color: rgb(97, 54, 252) 
+}
+.header-top-left .dropdown-menu {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    min-width: 110px;
+    padding: 0;
+    position: absolute;
+    z-index: 99999999
+}
+.dropdown-menu > li {
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: block;
+    margin: 2px 0;
+    padding: 0 10px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    font-weight: 500;
+}
+.dropdown-menu > li:last-child{
+    border-bottom: 0px solid #ddd
+}
+.dropdown-menu > li:hover{
+    color: rgb(97, 54, 252)  
+}
+.header-top-right > a {
+    border-right: 1px solid #ddd;
+    color: #fff;
+    font-weight: 600;
+    margin-right: 13px;
+    padding-right: 8px;
+    text-transform: capitalize;
+}
+.header-top-right > a:hover{
+    color: #333
+}
+.header-top-right > a:last-child{
+    border-right: 0px solid #ddd
+}
+.header-top-overlay:before {
+    border-color: rgb(97, 54, 252) transparent;
+    border-style: solid;
+    border-width: 58px 0 0 65px;
+    content: "";
+    left: -65px;
+    position: absolute;
+    top: 0;
+}
+.kick-mobile-menu{
+    display: none
+}
+.mainmenu-left {
+    float: right;
+    margin: 20px 0
+}
+.kick-site-logo {
+    float: none;
+    margin: 0 auto;
+    width: 130px;
+}
+.kick-site-logo > img {
+    float: left;
+    left: 44%;
+    position: absolute;
+    width: 135px;
+    z-index: 99999;
+}
+.mainmenu-left li {
+    display: inline-block;
+    position: relative
+}
+.mainmenu-left li a{
+    display: block;
+    text-transform: capitalize;
+    padding: 30px 10px;
+    font-size: 18px;
+    color: #fff
+}
+.mainmenu-left .current-page-item > a, .mainmenu-left a:hover {
+    color: rgb(97, 54, 252);
+}
+.header-mainmenu-area {
+    background: #212121 none repeat scroll 0 0;
+    border-top: 2px solid rgb(97, 54, 252);
+    position: relative
+}
+.mainmenu-left ul > li > ul {
+    background: #212121 none repeat scroll 0 0;
+    border-top: 2px solid rgb(97, 54, 252);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    top: 130%;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    visibility: hidden;
+    width: 220px;
+    z-index: 999999;
+}
+.mainmenu-left ul > li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    top: 100%
+}
+.mainmenu-left li ul li{
+    display: block;
+    border-bottom: 2px solid #4a4a4a
+}
+.mainmenu-left li ul li:last-child{
+    border-bottom: 0px solid #4a4a4a
+}
+.mainmenu-left li ul li a{
+    display: block;
+    padding: 10px 20px
+}
+.mainmenu-left li ul li a:hover{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff
+}
+.mainmenu-left.second-menu ul li:nth-last-child(-n+2) ul{
+    left: auto;
+    right: 0;
+}
+
+
+
+/*================================================
+08 - MAIN SLIDER CSS
+==================================================*/
+
+.slide-item-1 {
+    background: rgba(0, 0, 0, 0.3) url("../img/slider-1.jpg") repeat scroll 0 0;
+}
+.slide-item-2 {
+    background: rgba(0, 0, 0, 0.3) url("../img/slider-2.jpg") repeat scroll 0 0;
+}
+.kick-main-caption{
+    background: rgba(26, 26, 26, 0.49) none repeat scroll 0 0
+}
+.kick-main-slide {
+    background-color: #eee;
+    background-position: center center ;
+    background-size: cover ;
+    height: 570px ;
+}
+.kick-main-caption{
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.kick-caption-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.kick-main-caption h2 {
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400
+}
+.kick-main-caption p {
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+.kick-main-caption a {
+    margin: 0 5px;
+}
+.kick-slide .owl-nav > .owl-prev{
+    visibility: hidden;
+    -webkit-transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.kick-slide:hover .owl-nav > .owl-prev{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.kick-slide .owl-nav > .owl-next{
+    visibility: hidden;
+    -webkit-transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    
+}
+.kick-slide:hover .owl-nav > .owl-next{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.kick-slide .owl-prev {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 30px;
+    height: 80px !important;
+    line-height: 70px;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 45px;
+    left: 0
+}
+.kick-slide .owl-next {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 30px;
+    height: 80px !important;
+    line-height: 70px;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 45px;
+    right: 0
+}
+.kick-slide .owl-prev:hover, .kick-slide .owl-next:hover{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+}
+
+/*================================================
+09 - ABOUT AREA CSS
+==================================================*/
+
+.single-about-right {
+    margin-top: 25px;
+}
+.single-about-right-con {
+    color: rgb(97, 54, 252);
+    float: left;
+    font-size: 40px;
+}
+.single-about-right-text {
+    margin-left: 60px;
+}
+.single-about-right-text > h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.kick-about-left > img {
+    width: 100%;
+}
+/*================================================
+10 - LAST MATCH RESULT CSS
+==================================================*/
+
+.kick-last-match-result {
+    background-attachment: scroll;
+    background-image: url("../img/result_bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative
+}
+.kick-last-match-result:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 44, 44, 0.54)
+}
+.kick-last-match-result .kick-section-heading > h2 {
+    color: #fff;
+}
+.kick-last-match-result .title-line-one {
+    background: #fff none repeat scroll 0 0;
+}
+.result-details {
+    background: rgba(33, 33, 33, 0.76) none repeat scroll 0 0;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+}
+.last-match-logo {
+    position: absolute;
+    right: -30px;
+    top: -62px;
+    width: 150px;
+}
+.last-match-result-two {
+    text-align: right;
+}
+.last-match-logo-right {
+    position: absolute;
+    left: -30px;
+    top: -62px;
+    width: 150px;
+}
+.last-match-score > h2 {
+    color: rgb(97, 54, 252);
+    display: inline-block;
+    font-family: "Merriweather",serif;
+    font-size: 60px;
+    font-weight: 700;
+    left: 18px;
+    position: absolute;
+    top: 85px;
+}
+.last-match-score {
+    position: relative;
+    text-align: center;
+}
+.devider {
+    color: #fff;
+    left: 40px;
+    position: absolute;
+    top: 40px;
+}
+.lose-point {
+    left: 86px;
+    position: absolute;
+    top: 60px;
+}
+.result-details-left {
+    border-bottom: 1px solid #ddd;
+    color: #f83139;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    margin-right: 120px;
+    padding-bottom: 5px;
+    text-align: left;
+    text-transform: capitalize;
+}
+.result-details-right {
+    border-bottom: 1px solid #ddd;
+    color: #f83139;
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    text-align: left;
+    text-transform: capitalize;
+    margin-left: 120px
+}   
+.result-details > ul{
+    margin-top: 20px;
+}
+.result-details p {
+    display: inline-block;
+    text-align: left;
+    width: 58%;
+}
+.result-details ul li span {
+    margin-left: 10px;
+}
+.result {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.result-two p {
+    text-align: right;
+}
+.last-match-result {
+    margin-top: 30px;
+}
+.view-all-result {
+    margin-top: 50px;
+    text-align: center;
+    position: relative
+}
+/*================================================
+11 - UPCOMING MATCH CSS
+==================================================*/
+
+.single-upcoming-match {
+    border: 1px solid #ddd;
+    margin-top: 30px;
+    position: relative
+}
+.single-upcoming-match > h3 {
+    background: #f9f9f9 none repeat scroll 0 0;
+    color: #444;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 20px;
+    text-transform: capitalize;
+    text-align: right;
+    position: relative
+}
+.single-upcoming-match > h3:before {
+    border-color: rgb(97, 54, 252) transparent;
+    border-style: solid;
+    border-width: 27px 35px 27px 0;
+    content: "";
+    height: 50px;
+    left: -1px;
+    position: absolute;
+    top: 0;
+    width: 45%;
+}
+.single-upcoming-match > p {
+    color: #fff;
+    font-weight: 600;
+    left: 10px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    text-transform: capitalize;
+    top: 6px;
+}
+.single-upcoming-match span {
+    display: block;
+}
+.upcoming-match-box {
+    background: #212121 none repeat scroll 0 0;
+    padding: 40px 20px;
+    text-align: center;
+}
+.upcoming-match-box > h4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 5px
+}
+.upcoming-match-box > P{
+    color: #f81a23;
+    font-weight: 600;
+}
+.upcoming-teams-head {
+    margin: 35px 0;
+}
+.team-head-vs {
+    margin-top: 55px;
+}
+.team-head-vs > span {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(97, 54, 252);
+}
+.team-head-image {
+    height: 130px;
+    width: 120px;
+    margin: 0 auto
+}
+.team-head-image img {
+    height: 100%;
+    width: 100%;
+}
+.upcoming-match-btn .kick-btn {
+    padding: 10px 20px;
+    margin: 0 5px
+}
+.upcoming-slider .owl-next, .top-player-slider .owl-next, .top-product-slider .owl-next{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 20px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -25px;
+    width: 30px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.upcoming-slider .owl-prev, .top-player-slider .owl-prev, .top-product-slider .owl-prev{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 20px;
+    height: 30px;
+    position: absolute;
+    right: 35px;
+    text-align: center;
+    top: -25px;
+    width: 30px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.upcoming-slider .owl-next:hover, .upcoming-slider .owl-prev:hover, .top-player-slider .owl-next:hover, .top-player-slider .owl-prev:hover, .top-product-slider .owl-next:hover, .top-product-slider .owl-prev:hover{
+    background: #212121 none repeat scroll 0 0;
+}
+
+/*================================================
+12 - VIDEO AREA CSS
+==================================================*/
+
+.kick-video-area:before{
+    background-image: url("../img/video_bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 56%;
+}
+.kick-video-area {
+    background-color: #f8f8f8;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.kick-video-overlay{
+    background: rgba(44, 44, 44, 0.54) none repeat scroll 0 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 56%;
+}
+.popup-youtube > i {
+    background: rgba(0, 0, 0, 0.54) none repeat scroll 0 0;
+    border: 6px solid rgba(175, 175, 175, 0.8);
+    border-radius: 50%;
+    color: rgb(97, 54, 252);
+    display: inline-block;
+    font-size: 30px;
+    height: 75px;
+    line-height: 65px;
+    margin-top: 30px;
+    padding-left: 10px;
+    text-align: center;
+    width: 75px;
+    z-index: 99;
+    position: relative
+}
+.youtube-text {
+    padding: 130px 100px 130px 0;
+    text-align: center;
+}   
+.kick-score-scroll tbody tr td {
+    padding: 25px 20px;
+    vertical-align: middle;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #212121;
+    color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(2n+2) {
+    background-color: #343434;
+    color: #fff;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+    border-top: 0px solid #ddd;
+    text-transform: capitalize;
+    vertical-align: middle
+}
+.table.table-striped.table-responsive img {
+    float: left;
+    margin-right: 11px;
+}
+.kick-score-scroll {
+    background: #343434 none repeat scroll 0 0;
+    height: 290px;
+    margin-top: 30px;
+    position: relative;
+}   
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+    background-color: rgb(97, 54, 252) ;
+    border-radius: 20px;
+}
+.kick-video-wrap > h2 {
+    color: #444;
+    display: inline-block;
+    font-family: "Merriweather",serif;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.kick-video-wrap span {
+    color: rgb(97, 54, 252);
+}
+
+/*================================================
+13 - TOP PLAYER CSS
+==================================================*/
+
+.single-top-player {
+    margin-top: 30px;
+    border: 1px solid #ddd
+    
+}
+.player-nmbr {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    float: left;
+    font-size: 30px;
+    font-weight: 600;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 15px;
+    text-align: center;
+    width: 50px;
+}
+.player-info {
+    background: #212121 none repeat scroll 0 0;
+    color: #fff;
+    padding: 15px;
+}
+.player-name > h4 {
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(246, 245, 250);
+}   
+.player-name > p {
+    color: rgb(246, 245, 250);
+    text-transform: capitalize;
+}
+.player-name a:hover{
+    color: rgb(97, 54, 252);
+}
+
+/*================================================
+14 - GALLERY AREA CSS
+==================================================*/
+
+.kick-match-gallery-area {
+    background: #f8f8f8 none repeat scroll 0 0;
+}
+.single-match-gallery {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+}
+.load-more {
+    margin-top: 50px;
+    text-align: center;
+}
+.project-img{
+    position: relative
+}
+.single-pro-overlay {
+    background: rgba(21, 21, 21, 0.78) none repeat scroll 0 0;
+    color: rgb(97, 54, 252);
+    font-size: 23px;
+    height: 100%;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    padding: 81px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    visibility: hidden;
+    width: 100%;
+    -webkit-transform: scale(.01);
+            transform: scale(.01)
+}
+.single-match-gallery:hover .single-pro-overlay{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: scale(.90);
+            transform: scale(.90)
+}
+.load-more .kick-btn:hover{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+
+/*================================================
+15 - TOP PRODUCT CSS
+==================================================*/
+
+.product-text {
+    background: #212121 none repeat scroll 0 0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.product-text > h3 {
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.product-text li {
+    display: inline-block;
+}
+.product-text ul li i {
+    color: #fac62a;
+    font-size: 14px;
+}
+.product-text > h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 3px;
+}
+.product-image {
+    position: relative;
+}
+.product-overlay {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    height: 100%;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    top: 0;
+    -webkit-transform: scale(0.01);
+            transform: scale(0.01);
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    visibility: hidden;
+    width: 100%;
+}
+.single-top-product:hover .product-overlay{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: scale(.90);
+            transform: scale(.90)
+}
+.product-image-hover {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 2px;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    padding: 5px 0;
+    position: absolute;
+    right: 0;
+    top: 85%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    width: 85%;
+    text-align: center
+}
+.single-top-product:hover .product-image-hover {
+    margin-top: -70px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+    z-index: 99
+}
+.product-image-hover a {
+    border-right: 1px solid #ddd;
+    color: #252525;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0 18px;
+    text-align: center;
+}
+.product-image-hover a:last-child{
+    border-right: 0px solid #ddd;
+}
+.product-image img {
+    background: #212121 none repeat scroll 0 0;
+    padding: 5px;
+    width: 100%
+}
+.product-image-hover a:hover{
+    color: rgb(97, 54, 252)
+}
+.single-top-product{
+    margin-top: 30px
+}
+.kick-top-products-page-area .single-top-product {
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+/*================================================
+16 - LATEST POST CSS
+==================================================*/
+
+.kick-latest-post-area {
+    background: #f8f8f8 none repeat scroll 0 0;
+}
+.single-latest-post {
+    border: 1px solid #ddd;
+    margin-top: 30px;
+}
+.single-post-text {
+    padding: 20px;
+    background: #fff none repeat scroll 0 0
+}
+.single-post-text h3 {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.single-post-text h3 a:hover, .admin-image > a:hover, .admin-image-right a:hover{
+    color: rgb(97, 54, 252)
+}
+.post-text-bottom {
+    border-top: 1px solid #ddd;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+.admin-image > img {
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+.admin-image > a {
+    font-size: 15px;
+    font-weight: 600;
+}
+.admin-image-right li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.admin-image-right > ul {
+    text-align: right;
+}
+.admin-image-right a {
+    font-weight: 300;
+}
+.admin-image-right ul li a i {
+    color: rgb(97, 54, 252);
+}
+.single-latest-post > a > img {
+    width: 100%;
+}
+
+/*================================================
+17 - FOOTER CSS
+==================================================*/
+
+.kick-top-footer-area {
+    background: #313131 none repeat scroll 0 0;
+    color: #b5b5b5;
+}
+.single-footer-widget > h3 {
+    color: #eee;
+    font-family: "Merriweather",serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+.single-footer-widget span {
+    color: rgb(97, 54, 252);
+}
+.add-icon {
+    border: 1px solid rgb(97, 54, 252);
+    float: left;
+    height: 35px;
+    margin-right: 5px;
+    text-align: center;
+    width: 35px;
+    color: #fff
+}
+.single-footer-address > li {
+    display: block;
+    margin-top: 12px;
+}
+.single-footer-address p {
+    display: block;
+    overflow: hidden
+}
+.single-footer-link > li {
+    border-bottom: 2px solid #4a4a4a;
+}
+.single-footer-link > li:last-child{
+    border-bottom: 0px solid #4a4a4a;
+}
+.single-footer-link a {
+    display: block;
+    padding: 8px;
+    text-transform: capitalize;
+}
+.single-footer-link a:hover{
+    margin-left: 5px;
+    color: rgb(97, 54, 252)
+}
+.single-footer-link li a i {
+    color: rgb(97, 54, 252);
+    font-size: 14px;
+    margin-right: 7px;
+}
+.footer-post-img {
+    float: left;
+    height: 60px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 60px;
+}
+.footer-post-img > img {
+    height: 100%;
+    width: 100%;
+}
+.footer-post-text {
+    float: none;
+    overflow: hidden;
+}
+.single-footer-post > li {
+    border-bottom: 2px solid #4a4a4a;
+    clear: both;
+    display: block;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+.single-footer-post > li:last-child{
+    border-bottom: 0px solid #4a4a4a;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+.single-footer-post li > a:hover{
+    color: rgb(97, 54, 252)
+}
+.single-footer-social {
+    margin-top: 20px;
+}
+.single-footer-social > li {
+    display: inline-block;
+}
+.single-footer-social li a {
+    background: #fff none repeat scroll 0 0;
+    color: rgb(97, 54, 252);
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+}
+.single-footer-social li a:hover{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+}
+.kick-footer-bottom {
+    position: relative;
+    text-align: center;
+}
+.kick-footer-bottom:after {
+    border-color: #212121 transparent;
+    border-style: solid;
+    border-width: 30px 0 30px 30px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30.33%;
+}
+.kick-footer-bottom:before {
+    border-color: #212121 transparent;
+    border-style: solid;
+    border-width: 30px 30px 30px 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 30.33%;
+}
+.copyright{
+    font-weight: 600
+}
+.copyright p i, .copyright p span, .copyright p a {
+    color: rgb(97, 54, 252);
+}
+.mobile{
+    display: none
+}
+
+/*================================================
+18 - ABOUT PAGE CSS
+==================================================*/
+
+.about-page-welcome-right > h3 {
+    color: #000;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.about-page-welcome-right > ul {
+    float: left;
+    margin: 12px 0;
+    width: 50%;
+}
+.about-page-welcome-right ul li a i {
+    color: rgb(97, 54, 252);
+    margin-right: 5px;
+}
+.about-page-welcome-right a {
+    color: #333;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.about-page-welcome-right a:hover{
+    color: rgb(97, 54, 252);
+}
+.about-page-welcome-right li {
+    margin-bottom: 7px;
+}
+.about-page-welcome-right, .something-text {
+    margin-top: 20px;
+}
+.kick-about-page-something {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+.something-text > p {
+    margin: 10px 0 0;
+}
+.club-history-tab {
+    margin-top: 30px;
+}
+.nav-tabs > li {
+    float: none;
+    margin-top: 10px;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    border-width: 0px;
+}
+.nav-tabs {
+    border-bottom: 0px solid #ddd;
+}
+.nav-tabs > li > a{
+    border: 0px solid transparent
+}
+#pro_2 .active > a {
+    background: #212121 none repeat scroll 0 0;
+    color: #fff;
+    position: relative;
+    z-index: 999
+}
+#pro_2 a {
+    background: #212121 none repeat scroll 0 0;
+    border-left: 5px solid #eee;
+    border-radius: 0;
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: left
+}
+#pro_2 .active > a:before {
+    border-color: rgb(97, 54, 252) transparent;
+    border-style: solid;
+    border-width: 23px 0 22px 26px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 22%;
+    z-index: -999;
+}
+.panel-body > h3 {
+    color: #000;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.panel-video > .youtube-text {
+    padding: 105px 0;
+}
+.panel-video:before {
+    background-image: url("../img/video_bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    bottom: 0;
+    content: "";
+    left: 0;
+     position: absolute;
+    top: 0;
+    width: 100%;
+}
+.panel-video{
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px
+}
+.panel-video:after {
+    background: rgba(44, 44, 44, 0.54) none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.panel-body{
+    border: 1px solid #ddd
+}
+
+/*================================================
+19 - FIXTURE PAGE CSS
+==================================================*/
+
+.kick-fixture-page-next-match .single-upcoming-match {
+    margin-top: 0;
+}
+#coming-soon:before {
+    border-color: rgb(97, 54, 252) transparent;
+    border-style: solid;
+    border-width: 45px 35px 45px 0;
+    content: "";
+    height: 50px;
+    left: -1px;
+    position: absolute;
+    top: 0;
+    width: 43%;
+}
+#coming-soon {
+    background: #f9f9f9 none repeat scroll 0 0;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 20px;
+    position: relative;
+    text-align: right;
+    text-transform: capitalize;
+}
+#coming-soon > p{
+    display: inline-block;
+    background: #212121 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    width: 80px
+}
+.single-upcoming-match > h2 {
+    color: #fff;
+    font-weight: 600;
+    left: 10px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    text-transform: capitalize;
+    top: 32px;
+    font-size: 22px
+}
+.table > thead > tr > th{
+    border-bottom: 0px solid #ddd
+}
+.fixture-page-next-match-right table thead {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    text-transform: capitalize;
+}
+.fixture-page-next-match-right table{
+    margin-bottom: 0px
+}
+
+/*================================================
+20 - SINGLE FIXTURE PAGE CSS
+==================================================*/
+
+.single-fixture-left-widght{
+    margin-top: 20px
+}
+.single-fixture-left-widght > h3 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: #444
+}
+.single-fixture-left-widght table thead {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    text-transform: capitalize;
+}
+.single-fixture-left-widght blockquote:before {
+    color: #eaebec;
+    content: "";
+    font-family: "FontAwesome";
+    font-size: 115px;
+    left: 0;
+    line-height: 110px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+.single-fixture-left-widght blockquote {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border-left: 5px solid #212121;
+    color: #354a6b;
+    font-size: 23px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 35px;
+    margin-bottom: 25px;
+    margin-right: 0;
+    margin-top: 25px;
+    padding: 40px 30px;
+    position: relative;
+}
+.single-fixture-left-widght blockquote > p {
+    position: relative;
+    z-index: 10;
+}
+.single-fixture-left-widght > ul {
+    float: left;
+    margin: 20px 0;
+    width: 33.33%;
+}
+.single-fixture-left-widght li {
+    margin-bottom: 7px;
+}
+.single-fixture-left-widght a {
+    color: #333;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.single-fixture-left-widght ul li a i {
+    color: rgb(97, 54, 252);
+    margin-right: 5px;
+}
+.single-fixture-left-widght a:hover {
+    color: rgb(97, 54, 252);
+}
+.post-box-share{
+    border-bottom: 1px solid #f3f3f3;
+    border-top: 1px solid #f3f3f3;
+    padding: 15px 10px;
+    clear: both
+}
+.box-share-left > h3, .box-share-right > h3{
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block
+}
+.box-share-right{
+    text-align: right
+}
+.box-share-right a {
+    color: #bcc4d0;
+    margin-left: 5px;
+}
+.box-share-right .facebook:hover {
+    color: #4b6ea9;
+}
+.box-share-right .twitter:hover {
+    color: #65bbf2;
+}
+.box-share-right .google:hover {
+    color: #dd4d41;
+}
+.box-share-right .linked:hover {
+    color: #0075b5;
+}
+.kick-comment-list {
+    margin-top: 30px;
+}
+.comment-group-title h2 {
+    color: #333;
+    font-size: 23px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.single-comment-box {
+    background: #f9f9f9 none repeat scroll 0 0;
+    margin-bottom: 10px;
+    padding: 0 10px 30px;
+    position: relative;
+    -webkit-transition: all 300ms ease 0s;
+    transition: all 300ms ease 0s;
+}
+.single-comment-box:last-child{
+    border-bottom: 0px solid #eeeeee
+}
+.main-comment {
+    font-size: 14px;
+    padding: 30px 0 0 100px;
+    position: relative;
+}
+.author-image {
+    border-radius: 50%;
+    left: 0;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 30px;
+}
+.author-image img {
+    border-radius: 50%;
+    display: block;
+    width: 80px;
+}
+.single-comment-item {
+    margin-top: 30px;
+}
+.single-comment-box.reply-comment {
+    margin-left: 100px;
+}
+.comment-info h4 {
+    color: #333;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.comment-info > p {
+    color: #212121;
+    text-transform: capitalize;
+}
+.comment-info {
+    margin-bottom: 10px;
+}
+.reply {
+    border: 1px solid #ddd;
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 5px 10px;
+    position: absolute;
+    right: -7px;
+    top: 2px;
+}
+.reply:hover{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff
+}
+.comment-form-template{
+    margin-top: 50px
+}
+.comment-form-template > form {
+    margin-top: 20px;
+}
+.comment-form-template form input[type="text"], .comment-form-template form input[type="email"] {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    float: left;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+    padding: 10px 15px;
+    width: 45%;
+}
+.comment-form-template form textarea {
+    border: 1px solid #ddd;
+    height: 160px;
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    width: 93%;
+}
+.comment-text-inner > p {
+    font-size: 16px;
+    line-height: 25px;
+}
+.comment-form-template form button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 20px;
+    text-transform: capitalize;
+    border: medium none;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.comment-form-template form button:hover {
+    background: #212121 none repeat scroll 0 0;
+}
+.kick-comment-list {
+    margin-top: 50px;
+}
+.single-fixture-right-widget {
+    margin-bottom: 30px;
+}
+.single-fixture-right-widget:last-child{
+    margin-bottom: 0px;
+}
+.single-fixture-right-widget > form {
+    height: 40px;
+    position: relative;
+}
+.single-fixture-right-widget input[type="search"] {
+    background: #fff none repeat scroll 0 0;
+    border: medium none;
+    height: 40px;
+    padding: 5px 60px 5px 10px;
+    width: 100%;
+    border: 1px solid #ddd
+}
+.single-fixture-right-widget form > button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    width: 20%;
+}
+.single-fixture-right-widget form > button:hover{
+    background: #212121 none repeat scroll 0 0
+}
+.single-fixture-right-widget > h3 {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-align: left;
+    text-transform: capitalize;
+}
+.single-fixture-right-widget table thead {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    text-transform: capitalize;
+}
+.blog-catagory {
+    border: 1px solid #ddd;
+}
+.blog-catagory > li {
+    border-bottom: 1px solid #ddd;
+}
+.blog-catagory > li:last-child{
+    border-bottom: 0px solid #ddd;
+}
+.blog-catagory a {
+    display: block;
+    padding: 10px 20px;
+    text-transform: capitalize;
+}
+.blog-catagory a:hover{
+    color: rgb(97, 54, 252)
+}
+.blog-catagory span {
+    float: right;
+}
+.moment-slider .owl-nav > .owl-prev{
+    visibility: hidden;
+    -webkit-transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.moment-slider:hover .owl-nav > .owl-prev{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.moment-slider .owl-nav > .owl-next{
+    visibility: hidden;
+    -webkit-transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    transition: all 0.3s cubic-bezier(.83, .8, .11, .64) 0s;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    
+}
+.moment-slider:hover .owl-nav > .owl-next{
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.moment-slider .owl-prev {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0;
+    color: #333;
+    font-size:23px;
+    height: 30px !important;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 30px;
+    left: 0;
+    line-height: 0
+}
+.moment-slider .owl-next {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 23px;
+    height: 30px !important;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    width: 30px;
+    right: 0;
+    line-height: 0
+}
+.moment-slider .owl-prev:hover, .moment-slider .owl-next:hover{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+}
+.single-fixture-right-widget > a {
+    display: inline-block;
+    height: 70px;
+    margin: 4px 2px;
+    width: 80px;
+}
+.single-fixture-right-widget img {
+    height: 100%;
+    width: 100%;
+}
+
+/*================================================
+21 - PLAYER PAGE CSS
+==================================================*/
+
+.single-top-player.center {
+    left: 55px;
+    position: relative;
+    text-align: center;
+}   
+.single-top-player > img {
+    height: auto;
+    width: 100%;
+}
+
+/*================================================
+22 - PLAYER DETAILS PAGE CSS
+==================================================*/
+
+.player-profile-left > table{
+    margin-bottom: 0
+}
+.single-top-player.details{
+    margin-top: 0
+}
+.progress-list li {
+    margin-bottom: 20px;
+}
+.progress-list li:last-child{
+    margin-bottom: 0
+}
+.progress-list p {
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.progress-list li .bar {
+    position: relative;
+}
+.player-details-right > h2 {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.player-desc > p {
+    margin: 0 0 10px;
+}
+.project-img.player-gallery-single > img {
+    width: 100%;
+}
+.player-social {
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding: 10px 5px;
+}
+.player-social > h3 {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-right: 20px
+}
+.player-social > a {
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    width: 30px;
+    color: #fff
+}
+.pl_fb {
+    background: #4b6ea9 none repeat scroll 0 0;
+}
+.pl_ttr {
+    background: #65bbf2 none repeat scroll 0 0;
+}
+.pl_gp {
+    background: #dd4d41 none repeat scroll 0 0;
+}
+.pl_lnk {
+    background: #047fc3 none repeat scroll 0 0;
+}
+.pl_fb:hover{
+    background: #3d629f none repeat scroll 0 0;
+}
+.pl_ttr:hover {
+    background: #51a7de none repeat scroll 0 0;
+}
+.pl_gp:hover {
+    background: #bf3f34 none repeat scroll 0 0;
+}
+.pl_lnk:hover {
+    background: #006ca7 none repeat scroll 0 0;
+}
+.kick-player-profile-info {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+.player-profile-left, .player-profile-right {
+    margin-top: 20px;
+}
+.player-gallery-single {
+    margin-top: 30px;
+}
+
+/*================================================
+23 - GALLERY PAGE CSS
+==================================================*/
+
+.element-item {
+    float: left;
+    padding: 0 15px;
+    width: 33.33%;
+}
+.project-btn-const {
+    text-align: center;
+}
+.project-btn-const a {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    display: inline-block
+}
+.project-btn-const > a:hover, .project-btn-const > a.current {
+    background: #212121 none repeat scroll 0 0;
+}
+
+/*================================================
+24 - TICKET PAGE CSS
+==================================================*/
+
+.single-tickets-list {
+    border: 1px solid #ddd;
+    clear: both;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.match-date {
+    background: #212121 none repeat scroll 0 0;
+    color: #fff;
+    float: left;
+    min-height: 150px;
+    padding: 45px 0;
+    width: 15%;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s
+}
+.match-date > h3 {
+    font-family: "Merriweather",serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+.match-date span {
+    display: block;
+    font-size: 24px
+}
+.match-tickets-box {
+    float: left;
+    width: 85%;
+    padding: 6px 20px
+}
+.match-tickets-box-left {
+  display: inline-block;
+  min-width: 80%;
+}
+.match-tickets-box-left > p {
+    clear: both;
+    color: #333;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+}
+.tickets-box-left-team {
+    float: left;
+    width: 44%;
+    margin-top: 7px
+}
+.tickets-box-team-img {
+    float: left;
+    height: 60px;
+    margin-right: 20px;
+    width: 60px;
+}
+.tickets-box-team-text {
+    float: none;
+    margin-left: 19px;
+    margin-top: 18px;
+    overflow: hidden;
+    text-align: left;
+    width: auto;
+}
+.tickets-box-team-text h4 {
+    display: inline-table;
+    font-family: "Merriweather",serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    vertical-align: middle;
+}
+.tickets-box-team-text h4 > a:hover{
+    color: rgb(97, 54, 252)
+}
+.tickets-box-left-vs {
+    float: left;
+    width: 12%;
+}
+.right-box .tickets-box-team-img {
+    float: right;
+    margin-left: 20px;
+    margin-right: 0;
+}
+.right-box .tickets-box-team-text {
+    float: right;
+}
+.match-tickets-box-right {
+    float: right;
+    margin: 40px 0
+}
+.match-tickets-box-right > a{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+.tickets-box-left-vs > h3 {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    font-size: 28px;
+    font-weight: 600;
+    height: 60px;
+    line-height: 60px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    width: 65px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    color: #fff
+}
+.single-tickets-list:hover .match-date{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+}
+.single-tickets-list:hover{
+    border: 1px solid rgb(97, 54, 252)
+}
+.single-tickets-list:hover .match-tickets-box-right > a{
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+}
+.single-tickets-list:hover .match-tickets-box-right > a:hover{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+.single-tickets-list:hover .tickets-box-left-vs > h3{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+.order-tickets table thead > tr:nth-of-type(2n+1){
+    background: #f4f4f4 none repeat scroll 0 0;
+}
+.order-tickets table thead th{
+    text-transform: uppercase;
+    padding: 15px 20px;
+}
+.order-tickets .table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #fff;
+}
+.order-tickets table tbody > tr{
+    color: #333 !important;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd
+}
+.order-tickets table tbody > tr:nth-of-type(2n+2){
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+.order-tickets table tbody tr > td {
+    padding: 25px 20px;
+}
+.kick-cart-preview > h3 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.kick-cart-quantity input {
+    width: 40%;
+}
+.kick-tickets-list-area .single-upcoming-match {
+    margin-top: 0;
+}
+.order-tickets {
+    margin-top: 50px;
+    overflow-x: auto
+}
+.order-tickets table {
+    margin-bottom: 0;
+}
+.order-tickets td a:hover{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+
+/*================================================
+25 - SINGLE SHOP CSS
+==================================================*/
+
+.single-product-page-left div.pro-view {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    float: none;
+    margin-bottom: 1px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+.single-product-page-left div.pro-view:last-child{
+    margin-bottom: 0px
+}
+#my-tab-content img {
+    width: 100%;
+}
+#my-tab-content {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.single-product-page-right > h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.single-product-page-right li {
+    display: inline-block;
+}
+.single-product-page-right li i {
+    color: #fac62a;
+    font-size: 15px;
+}
+.product-single-page-widget > h4 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.product-single-page-widget {
+    margin-top: 12px;
+}
+.product-single-page-widget > h5, .product-single-page-widget-double > h5 {
+    color: #000;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+    text-transform: capitalize;
+}
+.size li {
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+.size, .color {
+    display: inline-block
+}
+.size a {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 29px;
+    padding: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 40px;
+    color: #000
+}
+.product-single-page-widget-double {
+    display: inline-block;
+    margin-right: 20px;
+}
+.product-single-page-widget-double:last-child {
+    margin-right: 0px;
+}
+.color a {
+    display: block;
+    height: 30px;
+    text-align: center;
+    text-indent: -9999px;
+    width: 30px;
+}
+.color_1{
+    background: #f49d7d none repeat scroll 0 0;
+}
+.color_2{
+    background: #0a0909 none repeat scroll 0 0;
+}
+.color_3{
+    background: #d7ed9b none repeat scroll 0 0;
+}
+.color_4{
+    background: #98eaea none repeat scroll 0 0;
+}
+.color_5{
+    background: #9e89d8 none repeat scroll 0 0;
+}
+.product-single-page-widget-double input {
+    border: 1px solid #ddd;
+    height: 35px;
+    width: 80px;
+    margin-top: 10px
+}
+.product-single-page-share-btn {
+    display: inline-block;
+    margin-left: 20px
+}
+.product-single-page-widget .kick-btn:hover{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+.product-single-page-share-btn > a {
+    background: #212121 none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    vertical-align: middle;
+    width: 40px;
+}
+.shop-tab {
+    margin-top: 70px;
+}
+#singleshop{
+    border-bottom: 1px solid #ddd
+}
+#singleshop .active > a {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border-color: currentcolor currentcolor currentcolor #000;
+    -o-border-image: none;
+       border-image: none;
+    border-style: none none none solid;
+    border-width: medium medium medium 5px;
+    color: #fff;
+    font-weight: 600;
+}
+#singleshop a {
+    background: #eee none repeat scroll 0 0;
+    border-left: 5px solid #eee;
+    border-radius: 0;
+    color: #000;
+    margin: 0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+#singleshop li {
+    margin-right: 5px;
+    display: inline-block
+}
+.panel-body.desc > p {
+    margin: 0 0 10px;
+}
+.shop {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+}
+.panel-body.desc {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    padding-top: 20px;
+}
+.panel-body.shop .kick-comment-list {
+    margin-top: 0;
+}
+.kick-related-products-area {
+    margin-top: 30px;
+}
+
+/*================================================
+26 - CART PAGE CSS
+==================================================*/
+
+.cart-table {
+    overflow-x: auto;
+}
+.cart-table table thead > tr:nth-of-type(2n+1), .calculate-shipping-right table tbody > tr:nth-of-type(2n+1){
+    background: #f4f4f4  none repeat scroll 0 0;
+}
+.cart-table table thead th, .calculate-shipping-right table thead th {
+    text-transform: uppercase;
+    font-weight: 600
+}
+.cart-table > .table > tbody > tr > td, .cart-table > .table > tbody > tr > th, .cart-table > .table > tfoot > tr > td, .cart-table > .table > tfoot > tr > th, .cart-table > .table > thead > tr > td, .cart-table > .table > thead > tr > th {
+    border-bottom: 0 solid #ddd;
+    border-top: 0 solid #ddd;
+    vertical-align: middle;
+    color: #000
+}
+.cart-table thead th, .calculate-shipping-right thead th {
+    padding: 15px 20px !important;
+}
+.cart-table tbody td, .calculate-shipping-right tbody td {
+    padding: 15px 20px !important;
+}
+.kick-cart-close {
+    text-align: center;
+}
+.kick-cart-close > a:hover{
+    color: #e9563d
+}
+.kick-cart-preview img {
+    height: 60px;
+    width: 60px;
+}
+.cart-table tbody td p {
+    text-transform: capitalize;
+}
+.kick-cart-quantity > input {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 70px;    
+}
+.kick-cart-product p {
+    font-weight: 500;
+    display: inline-block
+}
+.kick-cart-product a:hover{
+    color: rgb(97, 54, 252) 
+}
+.cart-table table tbody > tr:nth-of-type(2n+2), .calculate-shipping-right table tbody > tr:nth-of-type(2n+2) {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+.cart-table > .table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #fff;
+}
+.kick-update-cart {
+    margin-top: 30px;
+}
+.coupon-cart-left {
+    text-align: left;
+}
+.coupon-cart-right {
+    text-align: right;
+}
+.coupon-cart-left input[type="text"] {
+    background: #eee none repeat scroll 0 0;
+    border: medium none;
+    height: 50px;
+    padding: 10px 15px;
+    width: 45%;
+}
+.coupon-cart-left input[type="submit"] {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-weight: 600;
+    height: 50px;
+    margin-left: 10px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.coupon-cart-left input[type="submit"]:hover, .coupon-cart-right > a:hover {
+    background: #212121 none repeat scroll 0 0;
+}
+.coupon-cart-right > a {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 50px;
+    margin-top: 0;
+    padding: 12px 20px;
+    text-transform: uppercase;
+}
+.calculate-shipping-left, .calculate-shipping-right {
+    margin-top: 50px;
+}
+.calculate-shipping-left select {
+    border: 1px solid #ddd;
+    height: 45px;
+    padding: 5px;
+    text-transform: capitalize;
+    width: 100%;
+}
+.calculate-shipping-left select option {
+    padding: 5px 10px;
+}
+.single-shipping input {
+    border: 1px solid #ddd;
+    height: 45px;
+    padding: 5px 10px;
+    width: 100%;
+    margin: 0
+}
+.single-shipping {
+    margin-top: 10px;
+}
+.calculate-shipping-left > form {
+    margin-top: 25px;
+}
+.calculate-shipping-right{
+    overflow-x: auto;
+}
+.calculate-shipping-right > table {
+    width: 100%;
+    margin-top: 25px;
+}
+.single-shipping button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 17px;
+    padding: 15px 20px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.single-shipping button:hover{
+    background: #212121 none repeat scroll 0 0;
+}
+.proceed-checkout > a {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 50px;
+    margin-top: 0;
+    padding: 12px 20px;
+    text-transform: uppercase;
+}
+.proceed-checkout > a:hover {
+    background: #212121 none repeat scroll 0 0;
+}
+.proceed-checkout {
+    margin-top: 50px;
+    text-align: right;
+}
+.calculate-shipping-left > h3, .calculate-shipping-right > h3 {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/*================================================
+27 - CHECKOUT PAGE CSS
+==================================================*/
+
+.kick-checkout-form > form {
+    margin-top: 30px;
+}
+.checkout-form-right {
+    margin-top: 0px;
+}
+.kick-checkout-form > h3, .checkout-bottom h3{
+    color: #000;
+    font-size: 23px;
+    font-weight: 600;
+}
+.checkout-form label {
+    color: #555;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize
+}
+.checkout-form input {
+    border: 1px solid #ddd;
+    height: 45px;
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.checkout-form textarea {
+    border: 1px solid #ddd;
+    height: 105px;
+    padding: 10px;
+    width: 100%;
+}
+.checkout-cart-table {
+    margin-top: 50px;
+}
+.payment h4 {
+    color: #333;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.payment {
+    margin-top: 15px;
+}
+.checkout-cart-table > table {
+    margin-top: 25px;
+}
+.payment > img {
+    float: right;
+}
+
+/*================================================
+28 - BLOG PAGE CSS
+==================================================*/ 
+
+.kick-blog-page-area .single-latest-post {
+    margin-bottom: 30px;
+    margin-top: 0;
+}      
+
+/*================================================
+29 - SINGLE BLOG PAGE CSS
+==================================================*/ 
+
+.single-blog-page-section .single-latest-post {
+    border: medium none;
+    margin-bottom: 0
+}
+.single-blog-page-section .single-post-text {
+    padding: 20px 0 0;
+}
+.single-blog-page-section .single-post-text > p {
+    margin: 0 0 10px;
+}
+.single-blog-section-inner > ul {
+    margin: 30px 0;
+}
+.single-blog-section-inner > ul li {
+    margin: 10px 0;
+}
+.single-blog-section-inner > ul i {
+    color: rgb(97, 54, 252) ;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.single-blog-page-section .post-text-bottom {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 20px;
+}
+
+/*================================================
+30 - 404 PAGE CSS
+==================================================*/
+
+.kick-notfound {
+    text-align: center;
+}
+.kick-notfound h2 {
+    color: rgb(97, 54, 252);
+    font-family: "Merriweather",serif;
+    font-size: 180px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.kick-notfound h4 {
+    color: #555;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.kick-notfound > form {
+    margin-bottom: 30px;
+    position: relative;
+}
+.kick-notfound > form > input {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    height: 50px;
+    padding: 5px 100px 5px 10px;
+    width: 100%;
+}
+.kick-notfound > form > button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 26px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    width: 100px;
+}
+.kick-notfound > form > button:hover{
+    background: #212121 none repeat scroll 0 0;
+}
+.kick-notfound .kick-btn:hover{
+    background: #212121 none repeat scroll 0 0;
+    color: #fff
+}
+
+/*================================================
+31 - FAQs PAGE CSS
+==================================================*/
+
+.kick-faqs-area {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+.kick-single-faqs {
+    margin-bottom: 25px;
+}
+.kick-single-faqs:last-child{
+    margin-bottom: 0px;
+}
+.kick-single-faqs i {
+    margin-right: 5px;
+}
+.kick-single-faqs > h3 {
+    color: #333333;
+    display: inline-block;
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.kick-single-faqs > p {
+    margin-left: 25px;
+    margin-top: 5px;
+}
+.kick-faqs-right > h3{
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.kick-faqs-right > form {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    margin-top: 30px;
+    padding: 30px 50px;
+}
+.kick-faqs-right > form p {
+    margin-top: 15px;
+}
+.kick-faqs-right > form label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+.kick-faqs-right > form textarea {
+    background: #fafafa none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    height: 120px;
+    padding: 5px 10px;
+    width: 100%;
+}
+.kick-faqs-right > form input{
+    background: #fafafa none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    color: #333;
+    height: 40px;
+    padding: 5px 10px;
+    width: 100%;
+}
+.kick-faqs-right > form button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    display: block;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.kick-faqs-right > form button:hover{
+    background: #212121 none repeat scroll 0 0;
+}
+
+/*================================================
+32 - LOGIN PAGE CSS
+==================================================*/
+
+.kick-login-page-area{
+    background: #f8f8f8 none repeat scroll 0 0
+}
+.login-page-box {
+    background: #fff none repeat scroll 0 0;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    width: 40%;
+}
+.login-page-heading {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+.login-page-heading i {
+    font-size: 22px;
+    margin-right: 5px;
+}
+.login-page-heading > h3 {
+    color: #333;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.login-page-box > form {
+    margin-top: 30px;
+}
+.account-form-group {
+    border: 1px solid #ddd;
+    height: 45px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.account-form-group > input {
+    border: medium none;
+    height: 100%;
+    left: 0;
+    padding: 5px 10px 5px 60px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.account-form-group i {
+    border-right: 1px solid #ddd;
+    color: #959595;
+    font-size: 18px;
+    height: 100%;
+    left: 0;
+    line-height: 40px;
+    margin-right: 5px;
+    padding-right: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 48px;
+}
+.login-page-box .forgot {
+    margin-left: 0 !important;
+    color: #333;
+    font-weight: 500;
+    float: left;
+}
+.login-page-box label {
+    color: #333;
+    display: block;
+    font-weight: 500;
+    text-align: right;
+}
+.login-page-box button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    height: 100%;
+    padding: 10px 20px;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    margin-top: 10px
+}
+.login-page-box button:hover{
+    background: #212121 none repeat scroll 0 0
+}
+.login-sign-up {
+    margin-top: 20px;
+}
+.login-sign-up > a {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.login-sign-up > a:hover{
+    color: rgb(97, 54, 252)
+}
+.login-page-box .remember {
+    margin-left: 0 !important;
+}
+.remember {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/*================================================
+33 - CONTACT PAGE CSS
+==================================================*/
+
+.single-contact-address {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: #fff none repeat scroll 0 0;
+    margin-bottom: 30px
+}
+.single-contact-address > h3 {
+    border-bottom: 1px solid #212121;
+    color: #303030;
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+.single-contact-address li {
+    margin-top: 15px;
+}
+.single-contact-address ul li i {
+    float: left;
+    font-size: 17px;
+    height: 30px;
+    line-height: 30px;
+    width: 35px;
+    color: rgb(97, 54, 252);
+}
+.single-contact-address p {
+    overflow: hidden;
+}
+.map-canvas{
+    height: 480px
+}
+.contact-form input {
+    border: 1px solid #ddd;
+    color: #000;
+    height: 50px;
+    padding: 5px 10px;
+    width: 100%;
+}
+.contact-form textarea {
+    border: 1px solid #ddd;
+    height: 135px;
+    padding: 5px 10px;
+    width: 100%;
+    color: #000;
+}
+.contact-form p {
+    margin-bottom: 10px;
+}
+.contact-form-button {
+    text-align: center;
+}
+.contact-form button {
+    background: rgb(97, 54, 252) none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 20px;
+    text-transform: capitalize;
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+.contact-form button:hover{
+    background: #212121 none repeat scroll 0 0;
+}
+.kick-contact-page-area {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+.contact-heading > h3 {
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.contact-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}

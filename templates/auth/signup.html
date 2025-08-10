@@ -1,0 +1,200 @@
+{% extends "../core/base/base.html" %}
+{% load static %}
+
+{% block contents %}
+    
+    
+    <!-- Breadcromb Area Start -->
+    <section class="kick-breadcromb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcromb-box">
+                        <h2>registration page</h2>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-home"></i> home</a></li>
+                            <li>/</li>
+                            <li>registration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcromb Area End -->
+    
+    <!-- Login Area Start -->
+<section class="kick-login-page-area section_100">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="login-page-box">
+          <div class="login-page-heading">
+            <i class="fa fa-lock"></i>
+            <h3>Register</h3>
+          </div>
+
+          <form id="register-form" action="{% url 'register' %}" method="post">
+            {% csrf_token %}
+
+              <div class="account-form-group">
+              <input type="text" name="Firstname" placeholder="Firstname" />
+              <i class="fa fa-user"></i>
+            </div>
+
+              <div class="account-form-group">
+              <input type="text" name="Lastname" placeholder="Lastname" />
+               <i class="fa fa-id-badge"></i>
+            </div>
+
+            <div class="account-form-group">
+              <input type="text" name="username" placeholder="Username" />
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="account-form-group">
+              <input type="email" name="email" placeholder="Email Address" />
+              <i class="fa fa-envelope-o"></i>
+            </div>
+            <div class="account-form-group">
+              <input type="password" name="password" placeholder="Choose Password" />
+              <i class="fa fa-lock"></i>
+            </div>
+            <div class="account-form-group">
+              <input type="password" name="confirm_password" placeholder="Confirm Password" />
+              <i class="fa fa-lock"></i>
+            </div>
+            <div class="remember">
+              <label>
+                <input type="checkbox" name="terms" />
+                I agree to the Terms & Conditions
+              </label>
+            </div>
+            <div class="submit-login">
+              <button type="submit">Register</button>
+            </div>
+          </form>
+
+          <div class="login-sign-up">
+            <a href="{% url 'auth_login' %}">Back to login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Login Area End -->
+    
+   <!-- Toastify CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!-- Custom Toastify Colors -->
+<style>
+  .toastify-success {
+    background: linear-gradient(to right, #004e64, #028090) !important;
+  }
+  .toastify-error {
+    background: linear-gradient(to right, #6b0000, #8b0000) !important;
+  }
+  .toastify-warning {
+    background: linear-gradient(to right, #665c00, #998e34) !important;
+  }
+</style>
+
+<!-- Toastify JS -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("register-form");
+  const submitBtn = form.querySelector("button[type='submit']");
+  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+  const TOAST_CLASSES = {
+    success: "toastify-success",
+    error:   "toastify-error",
+    warning: "toastify-warning"
+  };
+
+  const showToast = (msg, type="success") => {
+    Toastify({
+      text: msg,
+      className: TOAST_CLASSES[type],
+      duration: 4000,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: { borderRadius: "8px" }
+    }).showToast();
+  };
+
+  const validate = data => {
+    if (!data.username || !data.email || !data.password || !data.confirm_password) {
+      return "All fields are required!";
+    }
+    if (data.password.length < 6) {
+      return "Password must be at least 6 characters!";
+    }
+    if (data.password !== data.confirm_password) {
+      return "Passwords do not match!";
+    }
+    if (!data.terms) {
+      return "You must agree to the Terms & Conditions!";
+    }
+    return null;
+  };
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Processing...";
+
+    const data = {
+      Firstname:        form.Firstname.value.trim(),
+      Lastname:         form.Lastname.value.trim(),
+      username:         form.username.value.trim(),
+      email:            form.email.value.trim(),
+      password:         form.password.value,
+      confirm_password: form.confirm_password.value,
+      terms:            form.terms.checked
+    };
+
+    const error = validate(data);
+    if (error) {
+      showToast(error, error.includes("agree") ? "warning" : "error");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Register";
+      return;
+    }
+
+    try {
+      const resp = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken
+        },
+        body: JSON.stringify(data)
+      });
+      const result = await resp.json();
+
+      if (result.success) {
+        showToast("Registration successful! Redirecting...", "success");
+        setTimeout(() => window.location.href = "{% url 'auth_login' %}", 2000);
+      } else {
+        showToast(result.error || "Registration failed!", "error");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Register";
+      }
+    } catch (err) {
+      console.error(err);
+      showToast("Something went wrong! Please try again.", "error");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Register";
+    }
+  });
+});
+</script>
+    
+{% endblock contents %} 

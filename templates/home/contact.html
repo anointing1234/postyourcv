@@ -1,0 +1,127 @@
+{% extends "../core/base/base.html" %}
+{% load static %}
+
+{% block contents %}
+  <!-- Breadcrumb -->
+  <section class="kick-breadcromb-area">
+    <div class="container">
+      <div class="row"><div class="col-md-12">
+        <div class="breadcromb-box">
+          <h2>Contact Us</h2>
+          <ul>
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li>/</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <div id="map-canvas" style="width:100%; height:400px; margin-bottom:40px;">
+    <iframe width="100%" height="100%" frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed?pb=!1m18...">
+    </iframe>
+  </div>
+
+  <!-- Contact Form -->
+  <section class="kick-contact-form-area section_100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="contact-form">
+            <div class="contact-heading text-center">
+              <h3>Get In Touch</h3>
+              <p>Our experts will reply to you very soon</p>
+            </div>
+            <form id="contactForm">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label>Your Full Name *</label>
+                  <input type="text" name="your_name" id="your_name" class="form-control" placeholder="Your Full Name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Email *</label>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label>Your Country or Location *</label>
+                  <input type="text" name="your_location" id="your_location" class="form-control" placeholder="Your Country or Location" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label>Player Full Name</label>
+                  <input type="text" name="player_name" id="player_name" class="form-control" placeholder="Player Full Name">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label>Player Country or Location</label>
+                  <input type="text" name="player_location" id="player_location" class="form-control" placeholder="Player Country or Location">
+                </div>
+              </div>
+
+              <div class="row text-center" style="margin-top:20px;">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1) Pre-fill from URL params if present:
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('player_name')) {
+        document.getElementById('player_name').value = params.get('player_name');
+      }
+      if (params.has('player_country')) {
+        document.getElementById('player_location').value = params.get('player_country');
+      }
+
+      // 2) Handle form submission via fetch:
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+
+        try {
+          const resp = await fetch("{% url 'contact_form' %}", {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            },
+            body: data
+          });
+          const json = await resp.json();
+          if (json.success) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Sent!',
+              text: 'Your message has been sent to our team.',
+              timer: 2000,
+              showConfirmButton: false
+            });
+            form.reset();
+          } else {
+            throw new Error(json.error || 'Unknown error');
+          }
+        } catch (err) {
+          Swal.fire('Error', err.message, 'error');
+        }
+      });
+    });
+  </script>
+{% endblock contents %}
